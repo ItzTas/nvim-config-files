@@ -31,23 +31,31 @@ return require('packer').startup(function(use)
   use('tpope/vim-fugitive')
 
   use {
-	  'VonHeikemen/lsp-zero.nvim',
-	  branch = 'v3.x',
-	  requires = {
-		  --- Uncomment the two plugins below if you want to manage the language servers from neovim
-		  {'williamboman/mason.nvim'},
-		  {'williamboman/mason-lspconfig.nvim'},
+      'VonHeikemen/lsp-zero.nvim',
+      branch = 'v3.x',
+      requires = {
+          --- Uncomment the two plugins below if you want to manage the language servers from neovim
+          {'williamboman/mason.nvim'},
+          {'williamboman/mason-lspconfig.nvim'},
 
-		  {'neovim/nvim-lspconfig'},
-		  {'hrsh7th/nvim-cmp'},
-		  {'hrsh7th/cmp-nvim-lsp'},
-		  {'L3MON4D3/LuaSnip'},
-	  }
+          {'neovim/nvim-lspconfig'},
+          {'hrsh7th/nvim-cmp'},
+          {'hrsh7th/cmp-nvim-lsp'},
+          {'L3MON4D3/LuaSnip'},
+      }
   }
 
   use('neovim/nvim-lspconfig')
-  use('jose-elias-alvarez/null-ls.nvim')
   use('MunifTanjim/prettier.nvim')
+  use({
+      "nvimtools/none-ls.nvim",
+      config = function()
+          require("null-ls").setup()
+      end,
+      requires = { "nvim-lua/plenary.nvim" },
+  })
+
+  use("nvim-lua/plenary.nvim")
 
   use ('mhartington/formatter.nvim')
 
@@ -105,4 +113,15 @@ return require('packer').startup(function(use)
           require("mason").setup()
       }
 
+      use {
+          'mg979/vim-visual-multi',
+          branch = 'master'
+      }
+
+      use {
+          'folke/trouble.nvim',
+          requires = 'nvim-tree/nvim-web-devicons',
+      }
+
+      use ('nvim-tree/nvim-web-devicons')
 end)
