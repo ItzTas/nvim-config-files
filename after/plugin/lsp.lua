@@ -36,7 +36,7 @@ lspconfig.golangci_lint_ls.setup({
 lspconfig.eslint.setup({
   cmd = { "vscode-eslint-language-server", "--stdio" },
   filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
-  root_dir = lspconfig.util.root_pattern(".eslintrc.js", ".eslintrc.json", ".eslintrc.yaml", ".eslintrc.yml", "package.json", ".git"),
+  root_dir = lspconfig.util.root_pattern( ".eslintrc.js", ".eslintrc.json", ".eslintrc.yaml", ".eslintrc.yml", "package.json", ".git"),
   settings = {
     codeAction = {
       disableRuleComment = {
@@ -48,7 +48,7 @@ lspconfig.eslint.setup({
       }
     },
     codeActionOnSave = {
-      enable = false,
+      enable = true,
       mode = "all"
     },
     experimental = {
@@ -63,7 +63,7 @@ lspconfig.eslint.setup({
     quiet = false,
     rulesCustomizations = {},
     run = "onType",
-    useESLintClass = false,
+    useESLintClass = true,
     validate = "on",
     workingDirectory = {
       mode = "location"
@@ -77,6 +77,8 @@ lspconfig.eslint.setup({
     })
   end,
 })
+
+lspconfig.tsserver.setup{}
 
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 local cmp_mappings = lsp_zero.defaults.cmp_mappings({
