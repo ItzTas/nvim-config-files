@@ -5,20 +5,21 @@ local sources = {
     null_ls.builtins.formatting.stylua,
     null_ls.builtins.completion.spell,
     null_ls.builtins.code_actions.gomodifytags,
-    null_ls.builtins.diagnostics.eslint,
     null_ls.builtins.code_actions.impl,
     null_ls.builtins.formatting.gofmt,
     null_ls.builtins.formatting.goimports,
     null_ls.builtins.formatting.goimports_reviser,
-    null_ls.builtins.formatting.htmlbeautifier,
     null_ls.builtins.formatting.markdownlint,
     null_ls.builtins.diagnostics.markdownlint,
     null_ls.builtins.diagnostics.mypy,
     null_ls.builtins.diagnostics.sqlfluff.with({
         extra_args = { "--dialect", "postgres" }, -- change to your dialect
     }),
+    require("none-ls.diagnostics.eslint"), -- requires none-ls-extras.nvim
     null_ls.builtins.diagnostics.staticcheck,
-    null_ls.builtins.formatting.prettier,
+    null_ls.builtins.formatting.prettierd,
+    null_ls.builtins.formatting.yamlfmt,
+    null_ls.builtins.hover.printenv,
 }
 
 -- Configuração para formatar automaticamente ao salvar
