@@ -1,7 +1,7 @@
 vim.opt.guicursor = "n:blinkon0,i-ci-ve:ver25,c:blinkon0"
 
 vim.opt.number = true
-vim.opt.relativenumber = false
+vim.opt.relativenumber = true
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
