@@ -10,7 +10,5 @@ require('formatter').setup({
         }
       end
     },
-    -- Adicione configurações para outras linguagens se necessário
   }
 })
-

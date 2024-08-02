@@ -9,7 +9,12 @@ lsp_zero.on_attach(function(client, bufnr)
 end)
 
 lspconfig.lua_ls.setup({})
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
+lspconfig.html.setup {
+  capabilities = capabilities,
+}
 lspconfig.gopls.setup({
   filetypes = { "go", "gomod", "gowork", "gotmpl" }, -- Definindo filetypes específicos
   settings = {
