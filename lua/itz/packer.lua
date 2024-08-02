@@ -146,4 +146,13 @@ return require('packer').startup(function(use)
     use("justinmk/vim-sneak")
 
     use 'romgrk/barbar.nvim'
+
+    use {
+        'mfussenegger/nvim-dap',
+        requires = {
+            'nvim-telescope/telescope-dap.nvim', -- Opcional, para integração com Telescope
+        }
+    }
+
+    use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } }
 end)
