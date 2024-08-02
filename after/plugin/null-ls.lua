@@ -15,10 +15,12 @@ local sources = {
     null_ls.builtins.diagnostics.sqlfluff.with({
         extra_args = { "--dialect", "postgres" }, -- change to your dialect
     }),
-    require("none-ls.diagnostics.eslint"), -- requires none-ls-extras.nvim
+    require("none-ls.diagnostics.eslint"),        -- requires none-ls-extras.nvim
     null_ls.builtins.diagnostics.staticcheck,
-    null_ls.builtins.formatting.prettierd,
     null_ls.builtins.formatting.yamlfmt,
+    null_ls.builtins.formatting.prettierd.with({
+        extra_args = { "--single-quote", "--trailing-comma", "all", "--semi" }, -- Adicione suas opções aqui
+    }),
     null_ls.builtins.hover.printenv,
 }
 

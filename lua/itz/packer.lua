@@ -139,4 +139,6 @@ return require('packer').startup(function(use)
     use('alvan/vim-closetag')
 
     use 'tpope/vim-dispatch'
+
+    use("elentok/format-on-save.nvim")
 end)
