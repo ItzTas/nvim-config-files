@@ -8,6 +8,8 @@ lsp_zero.on_attach(function(client, bufnr)
     lsp_zero.default_keymaps({ buffer = bufnr })
 end)
 
+lspconfig.bashls.setup {}
+
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
@@ -15,7 +17,10 @@ lspconfig.cssls.setup {
     capabilities = capabilities,
 }
 
+lspconfig.dockerls.setup {}
+
 lspconfig.cssmodules_ls.setup {}
+lspconfig.css_variables.setup {}
 
 lspconfig.lua_ls.setup({})
 
@@ -23,7 +28,7 @@ lspconfig.html.setup {
     capabilities = capabilities,
 }
 lspconfig.gopls.setup({
-    filetypes = { "go", "gomod", "gowork", "gotmpl" }, -- Definindo filetypes específicos
+    filetypes = { "go", "gomod", "gowork", "gotmpl" },
     settings = {
         gopls = {
             analyses = {
@@ -83,13 +88,6 @@ lspconfig.eslint.setup({
             mode = "location"
         }
     },
-    on_attach = function(client, bufnr)
-        -- Configura o autocmd para executar EslintFixAll antes de salvar o arquivo
-        vim.api.nvim_create_autocmd("BufWritePre", {
-            buffer = bufnr,
-            command = "EslintFixAll",
-        })
-    end,
 })
 
 lspconfig.tsserver.setup {}

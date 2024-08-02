@@ -29,6 +29,7 @@ return require('packer').startup(function(use)
     use('mbbill/undotree')
 
     use('tpope/vim-fugitive')
+    use 'nvim-tree/nvim-web-devicons' -- OPTIONAL: for file icons
 
     use {
         'VonHeikemen/lsp-zero.nvim',
@@ -141,4 +142,8 @@ return require('packer').startup(function(use)
     use 'tpope/vim-dispatch'
 
     use("elentok/format-on-save.nvim")
+
+    use("justinmk/vim-sneak")
+
+    use 'romgrk/barbar.nvim'
 end)
