@@ -22,6 +22,9 @@ lspconfig.dockerls.setup {}
 lspconfig.cssmodules_ls.setup {}
 lspconfig.css_variables.setup {}
 
+lspconfig.marksman.setup {}
+lspconfig.markdown_oxide.setup  {}
+
 lspconfig.lua_ls.setup({})
 
 lspconfig.html.setup {
