@@ -6,7 +6,8 @@ vim.api.nvim_set_keymap("i", "<C-s>", "<C-o>:lua Format_and_save()<CR>", { norem
 vim.api.nvim_set_keymap("v", "<C-s>", "<Esc>:lua Format_and_save()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("c", "<C-s>", "<C-r>=w<CR>", { noremap = true, silent = true })
 
-vim.keymap.set("x", "<leader>h", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("x", "<leader>h", ":s/^/")
+vim.keymap.set("x", "<leader>l", ":s/$/")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
