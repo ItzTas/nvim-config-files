@@ -12,5 +12,9 @@ return {
 		vim.keymap.set("n", "<leader>gra", function()
 			vim.cmd('Git log --oneline --graph --all --decorate --stat --pretty=format:"%h %d %s %an %ar"')
 		end, { desc = "git graph" })
+
+		vim.keymap.set("n", "<leader>ge", function()
+			vim.cmd("Git blame -f -n --show-stats --progress", { desc = "git blame" })
+		end)
 	end,
 }
