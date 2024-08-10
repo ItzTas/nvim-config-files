@@ -1,4 +1,4 @@
-vim.opt.guicursor = "n:blinkon0,i-ci-ve:ver25,c:blinkon0"
+vim.opt.guicursor = ""
 
 vim.opt.number = true
 vim.opt.relativenumber = true
