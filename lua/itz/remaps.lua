@@ -1,10 +1,12 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
-vim.api.nvim_set_keymap("n", "<C-s>", ":lua Format_and_save()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("i", "<C-s>", "<C-o>:lua Format_and_save()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("v", "<C-s>", "<Esc>:lua Format_and_save()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("c", "<C-s>", "<C-r>=w<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-s>", ":lua Format_and_save()<CR>", { noremap = true, silent = true })
+vim.keymap.set("i", "<C-s>", "<C-o>:lua Format_and_save()<CR>", { noremap = true, silent = true })
+vim.keymap.set("v", "<C-s>", "<Esc>:lua Format_and_save()<CR>", { noremap = true, silent = true })
+vim.keymap.set("c", "<C-s>", "<C-r>=w<CR>", { noremap = true, silent = true })
+
+vim.keymap.set("n", "<C-x>", "<C-v>")
 
 vim.keymap.set("n", "<C-z>", "<Nop>")
 
