@@ -1,12 +1,6 @@
 return {
     "folke/which-key.nvim",
     event = "VeryLazy",
-    opts = {
-        ["'"] = {
-            name = "Jump to Line",
-            ["l"] = { ":JumpToLine<CR>", "Jump to Line" },
-        },
-    },
     keys = {
         {
             "<leader>?",
