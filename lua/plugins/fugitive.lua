@@ -5,6 +5,16 @@ return {
 		vim.keymap.set("n", "<leader>gd", vim.cmd.Gvdiffsplit)
 		vim.keymap.set("n", "<leader>ggl", vim.cmd.GlLog, { desc = "GlLog" })
 
+		vim.keymap.set("n", "<leader>cm", function()
+			vim.cmd("Git commit")
+		end)
+		vim.keymap.set("n", "<leader>pu", function()
+			vim.cmd("Git push -u origin")
+		end)
+		vim.keymap.set("n", "<leader>pl", function()
+			vim.cmd("Git pull")
+		end)
+
 		vim.keymap.set("n", "<leader>gl", function()
 			vim.cmd("Git log")
 		end, { desc = "git log" })
