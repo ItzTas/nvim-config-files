@@ -9,7 +9,7 @@ return {
 			vim.cmd("Git commit")
 		end)
 		vim.keymap.set("n", "<leader>pu", function()
-			vim.cmd("Git push -u origin")
+			vim.cmd("Git push")
 		end)
 		vim.keymap.set("n", "<leader>pl", function()
 			vim.cmd("Git pull")
