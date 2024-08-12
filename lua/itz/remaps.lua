@@ -8,6 +8,8 @@ vim.keymap.set("c", "<C-s>", "<C-r>=w<CR>", { noremap = true, silent = true })
 
 vim.keymap.set("n", "<C-x>", "<C-v>")
 
+vim.keymap.set({ "n", "v", "x", "o" }, "<C-c>", "<Esc>")
+
 vim.keymap.set("n", "<C-z>", "<Nop>")
 
 vim.keymap.set("x", "<leader>h", ":s/^/")
