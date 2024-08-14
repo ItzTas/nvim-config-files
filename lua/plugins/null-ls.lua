@@ -16,12 +16,15 @@ return {
                 null_ls.builtins.diagnostics.dotenv_linter,
                 null_ls.builtins.formatting.prettierd.with({
                     extra_args = { "--single-quote", "--semi", "--jsx-single-quote" },
+                    disabled_filetypes = { "yaml" },
                 }),
                 require("none-ls.diagnostics.eslint"),
                 require("none-ls.code_actions.eslint"),
                 null_ls.builtins.formatting.shfmt,
                 null_ls.builtins.diagnostics.actionlint,
-                null_ls.builtins.diagnostics.yamllint,
+                null_ls.builtins.diagnostics.yamllint.with({
+                    extra_args = { "-d", "{rules: {document-start: false}}" },
+                }),
                 null_ls.builtins.formatting.yamlfmt,
             },
         })
