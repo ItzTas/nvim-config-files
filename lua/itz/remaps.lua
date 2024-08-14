@@ -4,9 +4,8 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("n", "<C-s>", ":lua Format_and_save()<CR>", { noremap = true, silent = true })
 vim.keymap.set("i", "<C-s>", "<C-o>:lua Format_and_save()<CR>", { noremap = true, silent = true })
 vim.keymap.set("v", "<C-s>", "<Esc>:lua Format_and_save()<CR>", { noremap = true, silent = true })
-vim.keymap.set("c", "<C-s>", "<C-r>=w<CR>", { noremap = true, silent = true })
 
-vim.keymap.set("n", "<C-i>", "O<Esc>")
+vim.keymap.set("n", "<C-i>", "O<Esc>j")
 vim.keymap.set("n", "<C-o>", "o<Esc>k")
 
 vim.keymap.set("n", "<C-x>", "<C-v>")
