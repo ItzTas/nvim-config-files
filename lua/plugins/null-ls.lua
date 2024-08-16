@@ -26,6 +26,9 @@ return {
 					extra_args = { "-d", "{rules: {document-start: false}}" },
 				}),
 				null_ls.builtins.formatting.yamlfmt,
+				null_ls.builtins.code_actions.gitrebase,
+				null_ls.builtins.code_actions.gitsigns,
+				null_ls.builtins.formatting.sql_formatter,
 			},
 		})
 
