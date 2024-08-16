@@ -5,6 +5,11 @@ vim.keymap.set("n", "<C-s>", ":lua Format_and_save()<CR>", { noremap = true, sil
 vim.keymap.set("i", "<C-s>", "<C-o>:lua Format_and_save()<CR>", { noremap = true, silent = true })
 vim.keymap.set("v", "<C-s>", "<Esc>:lua Format_and_save()<CR>", { noremap = true, silent = true })
 
+vim.keymap.set({ "n", "x" }, "L", "$")
+vim.keymap.set({ "n", "x" }, "H", "_")
+
+vim.keymap.set("n", "<A-g>", "gg")
+
 vim.keymap.set("n", "<C-g>", "O<Esc>j")
 vim.keymap.set("n", "<C-o>", "o<Esc>k")
 
