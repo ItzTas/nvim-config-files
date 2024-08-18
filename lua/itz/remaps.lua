@@ -5,26 +5,23 @@ vim.keymap.set("n", "<C-s>", ":lua Format_and_save()<CR>", { noremap = true, sil
 vim.keymap.set("i", "<C-s>", "<C-o>:lua Format_and_save()<CR>", { noremap = true, silent = true })
 vim.keymap.set("v", "<C-s>", "<Esc>:lua Format_and_save()<CR>", { noremap = true, silent = true })
 
-vim.keymap.set({ "n", "x" }, "L", "$")
-vim.keymap.set({ "n", "x" }, "H", "_")
-
 vim.keymap.set("n", "<A-g>", "<C-v>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 vim.keymap.set("n", "<leader>o", function()
-    vim.cmd("normal! mz")
-    vim.cmd("normal! o")
-    vim.cmd("normal! `z")
-    vim.cmd("delmarks z")
+	vim.cmd("normal! mz")
+	vim.cmd("normal! o")
+	vim.cmd("normal! `z")
+	vim.cmd("delmarks z")
 end)
 
 vim.keymap.set("n", "<leader>O", function()
-    vim.cmd("normal! mz")
-    vim.cmd("normal! O")
-    vim.cmd("normal! `z")
-    vim.cmd("delmarks z")
+	vim.cmd("normal! mz")
+	vim.cmd("normal! O")
+	vim.cmd("normal! `z")
+	vim.cmd("delmarks z")
 end)
 
 vim.keymap.set({ "n", "v", "x", "o" }, "<C-c>", "<Esc>")
