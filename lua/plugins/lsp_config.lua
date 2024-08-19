@@ -76,6 +76,8 @@ return {
 			lspconfig.bashls.setup({})
 			lspconfig.yamlls.setup({})
 			lspconfig.sqlls.setup({})
+			lspconfig.basedpyright.setup({})
+			lspconfig.pylsp.setup({})
 
 			lspconfig.html.setup({
 				capabilities = capabilities,

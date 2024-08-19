@@ -7,6 +7,7 @@ return {
     config = function()
         require("mason-lspconfig").setup({
             ensure_installed = {
+                "pylsp",
                 "eslint",
                 "lua_ls",
                 "tsserver",

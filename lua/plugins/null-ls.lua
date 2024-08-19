@@ -29,6 +29,9 @@ return {
 				null_ls.builtins.code_actions.gitrebase,
 				null_ls.builtins.code_actions.gitsigns,
 				null_ls.builtins.formatting.sql_formatter,
+				null_ls.builtins.diagnostics.pylint,
+				-- null_ls.builtins.diagnostics.mypy,
+				null_ls.builtins.formatting.blackd,
 			},
 		})
 
