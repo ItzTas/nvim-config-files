@@ -38,7 +38,6 @@ return {
                 vim.keymap.set("n", "<leader>gb", function()
                     gitsigns.blame_line({ full = true })
                 end)
-                vim.keymap.set("n", "<leader>gtb", gitsigns.toggle_current_line_blame)
                 -- Text object
                 vim.keymap.set({ "o", "x" }, "<leader>c", ":<C-U>Gitsigns select_hunk<CR>")
             end,
