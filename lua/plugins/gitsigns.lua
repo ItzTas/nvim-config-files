@@ -26,10 +26,10 @@ return {
                 end)
 
                 -- Actions
-                vim.keymap.set("v", "<leader>ph", function()
+                vim.keymap.set({ "v", "x" }, "<leader>ph", function()
                     gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
                 end)
-                vim.keymap.set("v", "<leader>pr", function()
+                vim.keymap.set({ "v", "x" }, "<leader>pr", function()
                     gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
                 end)
                 vim.keymap.set("n", "<leader>ghu", gitsigns.undo_stage_hunk)
