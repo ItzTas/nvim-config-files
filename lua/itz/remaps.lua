@@ -3,22 +3,21 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
-
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 vim.keymap.set("n", "<leader>o", function()
-    vim.cmd("normal! mz")
-    vim.cmd("normal! o")
-    vim.cmd("normal! `z")
-    vim.cmd("delmarks z")
+	vim.cmd("normal! mz")
+	vim.cmd("normal! o")
+	vim.cmd("normal! `z")
+	vim.cmd("delmarks z")
 end)
 
 vim.keymap.set("n", "<leader>O", function()
-    vim.cmd("normal! mz")
-    vim.cmd("normal! O")
-    vim.cmd("normal! `z")
-    vim.cmd("delmarks z")
+	vim.cmd("normal! mz")
+	vim.cmd("normal! O")
+	vim.cmd("normal! `z")
+	vim.cmd("delmarks z")
 end)
 
 vim.keymap.set({ "n", "v", "x", "o" }, "<C-c>", "<Esc>")
