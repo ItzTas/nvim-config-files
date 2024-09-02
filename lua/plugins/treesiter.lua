@@ -17,6 +17,7 @@ local M = {
 				"query",
 				"markdown",
 				"markdown_inline",
+                "json",
 			},
 			highlight = {
 				enable = true,

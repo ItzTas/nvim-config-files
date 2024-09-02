@@ -14,8 +14,7 @@ return {
 		},
 		config = function()
 			local lsp_zero = require("lsp-zero")
-			local cmp = require("cmp")
-			lsp_zero.on_attach(function(client, bufnr)
+			local lsp_attach = function(client, bufnr)
 				local opts = { buffer = bufnr, remap = false, desc = "LSP" }
 
 				vim.keymap.set("n", "gd", function()
@@ -57,18 +56,31 @@ return {
 				vim.keymap.set("n", "<C-h>", function()
 					vim.lsp.buf.signature_help()
 				end, opts)
-			end)
-			lsp_zero.preset("recommended")
-			local cmp_select = { behavior = cmp.SelectBehavior.Select }
-			local cmp_mappings = lsp_zero.defaults.cmp_mappings({
-				["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
-				["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
-				["<Tab>"] = cmp.mapping.confirm({ select = true }),
-				["<S-Tab>"] = cmp.mapping.complete(),
+			end
+
+			lsp_zero.extend_lspconfig({
+				sign_text = true,
+				lsp_attach = lsp_attach,
+				capabilities = require("cmp_nvim_lsp").default_capabilities(),
 			})
 
+			local cmp = require("cmp")
+
 			cmp.setup({
-				mapping = cmp_mappings,
+				sources = {
+					{ name = "nvim_lsp" },
+				},
+				snippet = {
+					expand = function(args)
+						vim.snippet.expand(args.body)
+					end,
+				},
+
+				mapping = cmp.mapping.preset.insert({
+					["<Tab>"] = cmp.mapping.complete(),
+					["<C-e>"] = cmp.mapping.abort(),
+					["<C-y>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+				}),
 			})
 
 			local lspconfig = require("lspconfig")
