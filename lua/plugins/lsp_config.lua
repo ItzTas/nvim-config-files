@@ -77,9 +77,11 @@ return {
 				},
 
 				mapping = cmp.mapping.preset.insert({
-					["<Tab>"] = cmp.mapping.complete(),
+					["<C-l>"] = cmp.mapping.complete(),
 					["<C-e>"] = cmp.mapping.abort(),
-					["<C-y>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+					["<C-y>"] = cmp.mapping.confirm({
+						select = true,
+					}), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 				}),
 			})
 
