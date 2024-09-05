@@ -11,9 +11,5 @@ return {
         vim.keymap.set("n", "<C-s>", function()
             hop.hint_char1({ current_line_only = false })
         end, { remap = true })
-
-        vim.keymap.set("n", "<C-y>", function()
-            vim.cmd.HopPattern()
-        end)
     end,
 }
