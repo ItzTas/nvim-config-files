@@ -41,7 +41,7 @@ return {
 
 			vim.keymap.set("n", "<leader>vh", builtin.help_tags)
 
-			vim.keymap.set("n", "<leader>pt", builtin.treesitter)
+			vim.keymap.set("n", "<leader>pt", builtin.live_grep)
 		end,
 	},
 	{
