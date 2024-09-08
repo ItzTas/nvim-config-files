@@ -5,9 +5,7 @@ return {
 		vim.keymap.set("n", "<leader>gd", vim.cmd.Gvdiffsplit)
 		vim.keymap.set("n", "<leader>ggl", vim.cmd.GlLog, { desc = "GlLog" })
 
-		vim.keymap.set("n", "<leader>cm", function()
-			vim.cmd("Git commit")
-		end)
+		vim.keymap.set("n", "<leader>cm", ":Git commit -m \"\"<left>")
 		vim.keymap.set("n", "<leader>pu", function()
 			vim.cmd("Git push")
 		end)
