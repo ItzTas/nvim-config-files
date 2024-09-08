@@ -20,11 +20,10 @@ vim.keymap.set("n", "<leader>O", function()
 	vim.cmd("delmarks z")
 end)
 
-vim.keymap.set({ "n", "v", "x", "o" }, "<C-c>", "<Esc>")
+vim.keymap.set({ "n", "v", "x", "o", "i" }, "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "<C-z>", "<Nop>")
 
-vim.keymap.set("x", "<leader>h", ":s/\\%V/")
 vim.keymap.set("x", "<leader>l", ":s/$/")
 vim.keymap.set("x", "<leader>s", ":s/\\%V.*\\%V\\(\\n\\)\\@!./")
 
