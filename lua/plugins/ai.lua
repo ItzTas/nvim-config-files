@@ -15,8 +15,6 @@ return {
             ignore_certificate_errors = false,
         })
 
-        vim.keymap.set("n", "<leader>tc", require("tabnine.chat").open)
-
         vim.keymap.set("i", "<C-b>", function()
             if require("tabnine.keymaps").has_suggestion() then
                 return require("tabnine.keymaps").accept_suggestion()
