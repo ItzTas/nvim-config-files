@@ -2,8 +2,6 @@ return {
 	"williamboman/mason.nvim",
 	opts = {},
 	config = function()
-		require("mason").setup({
-			automatic_installation = true,
-		})
+		require("mason").setup({})
 	end,
 }
