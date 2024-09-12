@@ -53,7 +53,7 @@ return {
 					vim.lsp.buf.rename()
 				end, opts)
 
-				vim.keymap.set("n", "<C-h>", function()
+				vim.keymap.set("n", "<leader>h", function()
 					vim.lsp.buf.signature_help()
 				end, opts)
 			end
