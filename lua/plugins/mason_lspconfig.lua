@@ -7,10 +7,10 @@ return {
     config = function()
         require("mason-lspconfig").setup({
             ensure_installed = {
+                "ts_ls",
                 "pylsp",
                 "eslint",
                 "lua_ls",
-                "tsserver",
                 "gopls",
                 "golangci_lint_ls",
                 "marksman",

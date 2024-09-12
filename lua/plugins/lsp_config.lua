@@ -90,7 +90,7 @@ return {
 			capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 			lspconfig.lua_ls.setup({})
-			lspconfig.tsserver.setup({})
+			lspconfig.ts_ls.setup({})
 			lspconfig.eslint.setup({})
 			lspconfig.gopls.setup({})
 			lspconfig.golangci_lint_ls.setup({})
