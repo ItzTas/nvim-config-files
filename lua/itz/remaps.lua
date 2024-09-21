@@ -44,13 +44,13 @@ vim.keymap.set({ "n", "v", "x", "o", "i" }, "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "<C-z>", "<Nop>")
 
-vim.keymap.set("n", "<leader>w", "/<C-r><C-w><CR>")
-vim.keymap.set("n", "<leader>W", 'vWy/<C-r>"<CR>')
+vim.keymap.set("n", "<leader>w", "/<C-r><C-w><CR>", { silent = true })
+vim.keymap.set("n", "<leader>W", 'vWy/<C-r>"<CR>', { silent = true })
 
 vim.keymap.set("x", "<leader>l", ":s/$/")
 vim.keymap.set("x", "<leader>s", ":s/\\%V.*\\%V\\(\\n\\)\\@!./")
 
-vim.keymap.set("x", "<leader>r", 'y:%s/<C-r>"//gI<Left><Left><Left>')
+vim.keymap.set("x", "<leader>S", 'y:%s/<C-r>"//gI<Left><Left><Left>')
 
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
