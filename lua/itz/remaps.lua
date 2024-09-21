@@ -7,23 +7,23 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 vim.keymap.set("n", "<leader>o", function()
-	local count = vim.v.count1
-	for _ = 1, count do
-		vim.cmd("normal! mz")
-		vim.cmd("normal! o")
-		vim.cmd("normal! `z")
-		vim.cmd("delmarks z")
-	end
+    local count = vim.v.count1
+    for _ = 1, count do
+        vim.cmd("normal! mz")
+        vim.cmd("normal! o")
+        vim.cmd("normal! `z")
+        vim.cmd("delmarks z")
+    end
 end)
 
 vim.keymap.set("n", "<leader>O", function()
-	local count = vim.v.count1
-	for _ = 1, count do
-		vim.cmd("normal! mz")
-		vim.cmd("normal! O")
-		vim.cmd("normal! `z")
-		vim.cmd("delmarks z")
-	end
+    local count = vim.v.count1
+    for _ = 1, count do
+        vim.cmd("normal! mz")
+        vim.cmd("normal! O")
+        vim.cmd("normal! `z")
+        vim.cmd("delmarks z")
+    end
 end)
 
 vim.keymap.set("n", "-", "<C-w>-")
@@ -44,7 +44,8 @@ vim.keymap.set({ "n", "v", "x", "o", "i" }, "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "<C-z>", "<Nop>")
 
-vim.keymap.set("n", "<leader>/", "/<C-r><C-w><CR>")
+vim.keymap.set("n", "<leader>w", "/<C-r><C-w><CR>")
+vim.keymap.set("n", "<leader>W", 'vWy/<C-r>"<CR>')
 
 vim.keymap.set("x", "<leader>l", ":s/$/")
 vim.keymap.set("x", "<leader>s", ":s/\\%V.*\\%V\\(\\n\\)\\@!./")
@@ -67,5 +68,6 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 vim.keymap.set({ "n", "v" }, "<leader>x", [["_x]])
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("n", "<leader>S", 'vWy:%s/<C-r>"//gI<Left><Left><Left>')
 
 vim.keymap.set("n", "<leader>ee", "oif err != nil {<CR>}<Esc>Oreturn err<Esc>")
