@@ -3,27 +3,29 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
+vim.keymap.set({ "n", "x" }, "ç", "~h")
+
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 vim.keymap.set("n", "<leader>o", function()
-    local count = vim.v.count1
-    for _ = 1, count do
-        vim.cmd("normal! mz")
-        vim.cmd("normal! o")
-        vim.cmd("normal! `z")
-        vim.cmd("delmarks z")
-    end
+	local count = vim.v.count1
+	for _ = 1, count do
+		vim.cmd("normal! mz")
+		vim.cmd("normal! o")
+		vim.cmd("normal! `z")
+		vim.cmd("delmarks z")
+	end
 end)
 
 vim.keymap.set("n", "<leader>O", function()
-    local count = vim.v.count1
-    for _ = 1, count do
-        vim.cmd("normal! mz")
-        vim.cmd("normal! O")
-        vim.cmd("normal! `z")
-        vim.cmd("delmarks z")
-    end
+	local count = vim.v.count1
+	for _ = 1, count do
+		vim.cmd("normal! mz")
+		vim.cmd("normal! O")
+		vim.cmd("normal! `z")
+		vim.cmd("delmarks z")
+	end
 end)
 
 vim.keymap.set("n", "-", "<C-w>-")
