@@ -10,9 +10,13 @@ return {
 
 		-- Module mappings. Use `''` (empty string) to disable one.
 		mappings = {
-			add = "ma", -- Add surrounding in Normal and Visual modes
-			delete = "md", -- Delete surrounding
+			add = "<leader>ma", -- Add surrounding in Normal and Visual modes
+			delete = "<leader>md", -- Delete surrounding
 			replace = "cs", -- Replace surrounding
+			find = "",
+			find_left = "",
+			highlight = "",
+			update_n_lines = "",
 		},
 
 		-- Number of lines within which surrounding is searched
