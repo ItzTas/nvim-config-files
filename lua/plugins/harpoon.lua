@@ -24,8 +24,12 @@ return {
             harpoon:list():select(2)
         end)
 
-        vim.keymap.set("n", "<C-y>", function()
+        vim.keymap.set("n", "<C-n>", function()
             harpoon:list():select(3)
+        end)
+
+        vim.keymap.set("n", "<C-y>", function()
+            harpoon:list():select(4)
         end)
 
         for i = 1, 9, 1 do
@@ -33,5 +37,13 @@ return {
                 harpoon:list():select(i)
             end)
         end
+
+        vim.keymap.set("n", "<leader>np", function()
+            harpoon:list():prev()
+        end)
+
+        vim.keymap.set("n", "<leader>nn", function()
+            harpoon:list():next()
+        end)
     end,
 }
