@@ -12,11 +12,5 @@ return {
                 },
             },
         })
-
-        vim.keymap.set("n", "<leader>q", function()
-            require("flash").jump({
-                pattern = vim.fn.expand("<cword>"),
-            })
-        end)
     end,
 }
