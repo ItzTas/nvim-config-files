@@ -54,7 +54,7 @@ vim.keymap.set("x", "<leader>s", ":s/\\%V.*\\%V\\(\\n\\)\\@!./")
 
 vim.keymap.set("x", "<leader>S", 'y:%s/<C-r>"/<C-r>/gI<Left><Left><Left>')
 
-vim.keymap.set({ "x" }, "<leader>q", [[y:s/<C-r>"/C-r>/g<Left><Left><Left>]])
+vim.keymap.set({ "x" }, "<leader>q", [[y:s/<C-r>"/C-r>/g<Left><Left>]])
 
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -71,7 +71,7 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 vim.keymap.set({ "n", "v" }, "<leader>x", [["_x]])
 
-vim.keymap.set({ "n" }, "<leader>q", [[:s/<C-r><C-w>/<C-r><C-w>/g<Left><Left><Left>]])
+vim.keymap.set({ "n" }, "<leader>q", [[:s/<C-r><C-w>/<C-r><C-w>/g<Left><Left>]])
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>S", 'vWy:%s/<C-r>"//gI<Left><Left><Left>')
