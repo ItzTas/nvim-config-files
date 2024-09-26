@@ -10,6 +10,12 @@ return {
                         ["if"] = "@function.inner",
                         ["ac"] = "@class.outer",
                         ["ic"] = "@class.inner",
+                        ["aa"] = "@parameter.outer",
+                        ["ia"] = "@parameter.inner",
+                        ["ii"] = "@conditional.inner",
+                        ["ai"] = "@conditional.outer",
+                        ["ao"] = "@block.outer",
+                        ["io"] = "@block.inner",
                     },
                 },
                 move = {
@@ -30,6 +36,24 @@ return {
                     goto_previous_end = {
                         ["[M"] = "@function.outer",
                         ["[C"] = "@class.outer",
+                    },
+                },
+                lsp_interop = {
+                    enable = true,
+                    border = "none",
+                    floating_preview_opts = {},
+                    peek_definition_code = {
+                        ["<leader>df"] = "@function.outer",
+                        ["<leader>dF"] = "@class.outer",
+                    },
+                },
+                swap = {
+                    enable = true,
+                    swap_next = {
+                        ["<leader>mn"] = "@parameter.inner",
+                    },
+                    swap_previous = {
+                        ["<leader>ml"] = "@parameter.inner",
                     },
                 },
             },
