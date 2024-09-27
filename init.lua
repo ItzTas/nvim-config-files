@@ -14,3 +14,15 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
 		require("gitsigns").toggle_current_line_blame()
 	end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "netrw",
+	callback = function()
+		local clients = vim.lsp.buf_get_clients(0)
+		if next(clients) ~= nil then
+			for _, client in pairs(clients) do
+				vim.lsp.buf_detach_client(0, client.id)
+			end
+		end
+	end,
+})

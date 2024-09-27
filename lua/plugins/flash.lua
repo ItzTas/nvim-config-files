@@ -9,7 +9,12 @@ return {
             modes = {
                 char = {
                     multi_line = false,
+                    highlight = { backdrop = false },
                 },
+            },
+            highlight = {
+                backdrop = false,
+                matches = true,
             },
         })
     end,
