@@ -13,7 +13,6 @@ return {
 			"neovim/nvim-lsp",
 			"nvim-lua/plenary.nvim",
 		},
-		run = ":GoInstallBinaries",
 		config = function()
 			require("go").setup({
 				-- notify: use nvim-notify
