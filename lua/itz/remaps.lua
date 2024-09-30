@@ -74,6 +74,6 @@ vim.keymap.set({ "n", "v" }, "<leader>x", [["_x]])
 vim.keymap.set({ "n" }, "<leader>q", [[:s/<C-r><C-w>/<C-r><C-w>/g<Left><Left>]])
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-vim.keymap.set("n", "<leader>S", 'vWy:%s/<C-r>"//gI<Left><Left><Left>')
+vim.keymap.set("n", "<leader>S", 'viWy:%s/<C-r>"//gI<Left><Left><Left>')
 
 vim.keymap.set("n", "<leader>ee", "oif err != nil {<CR>}<Esc>Oreturn err<Esc>")
