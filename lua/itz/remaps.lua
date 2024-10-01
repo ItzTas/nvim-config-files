@@ -9,23 +9,23 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 vim.keymap.set("n", "<leader>o", function()
-    local count = vim.v.count1
-    for _ = 1, count do
-        vim.cmd("normal! mz")
-        vim.cmd("normal! o")
-        vim.cmd("normal! `z")
-        vim.cmd("delmarks z")
-    end
+	local count = vim.v.count1
+	for _ = 1, count do
+		vim.cmd("normal! mz")
+		vim.cmd("normal! o")
+		vim.cmd("normal! `z")
+		vim.cmd("delmarks z")
+	end
 end)
 
 vim.keymap.set("n", "<leader>O", function()
-    local count = vim.v.count1
-    for _ = 1, count do
-        vim.cmd("normal! mz")
-        vim.cmd("normal! O")
-        vim.cmd("normal! `z")
-        vim.cmd("delmarks z")
-    end
+	local count = vim.v.count1
+	for _ = 1, count do
+		vim.cmd("normal! mz")
+		vim.cmd("normal! O")
+		vim.cmd("normal! `z")
+		vim.cmd("delmarks z")
+	end
 end)
 
 vim.keymap.set("n", "-", "<C-w>-")
@@ -65,8 +65,9 @@ vim.keymap.set("n", "<leader>zig", "<cmd>LspRestart<cr>")
 
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+vim.keymap.set("v", "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
+vim.keymap.set("n", "<leader>y", [[yy]])
 
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 vim.keymap.set({ "n", "v" }, "<leader>x", [["_x]])
