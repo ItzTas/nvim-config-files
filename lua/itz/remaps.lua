@@ -9,23 +9,23 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 vim.keymap.set("n", "<leader>o", function()
-	local count = vim.v.count1
-	for _ = 1, count do
-		vim.cmd("normal! mz")
-		vim.cmd("normal! o")
-		vim.cmd("normal! `z")
-		vim.cmd("delmarks z")
-	end
+    local count = vim.v.count1
+    for _ = 1, count do
+        vim.cmd("normal! mz")
+        vim.cmd("normal! o")
+        vim.cmd("normal! `z")
+        vim.cmd("delmarks z")
+    end
 end)
 
 vim.keymap.set("n", "<leader>O", function()
-	local count = vim.v.count1
-	for _ = 1, count do
-		vim.cmd("normal! mz")
-		vim.cmd("normal! O")
-		vim.cmd("normal! `z")
-		vim.cmd("delmarks z")
-	end
+    local count = vim.v.count1
+    for _ = 1, count do
+        vim.cmd("normal! mz")
+        vim.cmd("normal! O")
+        vim.cmd("normal! `z")
+        vim.cmd("delmarks z")
+    end
 end)
 
 vim.keymap.set("n", "-", "<C-w>-")
@@ -76,5 +76,3 @@ vim.keymap.set({ "n" }, "<leader>q", [[:s/<C-r><C-w>/<C-r><C-w>/g<Left><Left>]])
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>S", 'viWy:%s/<C-r>"//gI<Left><Left><Left>')
-
-vim.keymap.set("n", "<leader>ee", "oif err != nil {<CR>}<Esc>Oreturn err<Esc>")
