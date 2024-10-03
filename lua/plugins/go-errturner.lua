@@ -7,16 +7,10 @@ return {
     config = function()
         local err_returner = require("go-erreturner")
 
-        require("go-erreturner").setup({
-            error_variable_name = "err",
-        })
+        vim.keymap.set("n", "<leader>er", err_returner.return_err)
 
-        vim.keymap.set("n", "<leader>er", function()
-            err_returner.return_err()
-        end)
+        vim.keymap.set("n", "<leader>el", err_returner.println_err)
 
-        vim.keymap.set("n", "<leader>el", function()
-            err_returner.println_err()
-        end)
+        vim.keymap.set("n", "<leader>en", err_returner.return_new_err)
     end,
 }
