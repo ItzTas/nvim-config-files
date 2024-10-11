@@ -21,6 +21,8 @@ return {
                 "html",
                 "cssls",
                 "cssmodules_ls",
+                "docker_compose_language_service",
+                "dockerls",
             },
             automatic_installation = true,
         })

@@ -101,6 +101,8 @@ return {
             lspconfig.sqlls.setup({})
             lspconfig.basedpyright.setup({})
             lspconfig.pylsp.setup({})
+            lspconfig.docker_compose_language_service.setup({})
+            lspconfig.dockerls.setup({})
 
             lspconfig.html.setup({})
             lspconfig.cssls.setup({})
