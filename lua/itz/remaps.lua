@@ -46,8 +46,7 @@ vim.keymap.set({ "n", "v", "x", "o", "i" }, "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "<C-z>", "<Nop>")
 
-vim.keymap.set("n", "<leader>w", "/<C-r><C-w><CR>")
-vim.keymap.set("n", "<leader>W", 'yiW/<C-r>"<CR>')
+vim.keymap.set("n", "<leader>w", 'yiW/<C-r>"<CR>')
 
 vim.keymap.set("x", "<leader>w", 'y/<C-r>"<CR>')
 
@@ -67,9 +66,8 @@ vim.keymap.set("n", "<leader>zig", "<cmd>LspRestart<cr>")
 
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
-vim.keymap.set("v", "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
-vim.keymap.set("n", "<leader>y", [[yy]])
 
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 vim.keymap.set({ "n", "v" }, "<leader>x", [["_x]])
