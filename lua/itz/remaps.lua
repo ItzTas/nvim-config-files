@@ -71,7 +71,8 @@ vim.keymap.set({ "n", "v" }, "<leader>x", [["_x]])
 
 vim.keymap.set("n", "<leader>q", [[:s/<C-r><C-w>/<C-r><C-w>/g<Left><Left>]])
 
-vim.keymap.set("n", "+p", '"+p')
+vim.keymap.set("n", "gp", '"+p')
+vim.keymap.set("n", "gP", '"+P')
 vim.keymap.set("i", "<C-v>", '<ESC>"+pi')
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
