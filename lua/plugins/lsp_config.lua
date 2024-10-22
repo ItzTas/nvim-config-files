@@ -81,7 +81,7 @@ return {
                     ["<C-e>"] = cmp.mapping.abort(),
                     ["<C-y>"] = cmp.mapping.confirm({
                         select = true,
-                    }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+                    }),
                 }),
             })
 
@@ -103,10 +103,10 @@ return {
             lspconfig.pylsp.setup({})
             lspconfig.docker_compose_language_service.setup({})
             lspconfig.dockerls.setup({})
-
             lspconfig.html.setup({})
             lspconfig.cssls.setup({})
             lspconfig.cssmodules_ls.setup({})
+            lspconfig.csharp_ls.setup({})
         end,
     },
 }
