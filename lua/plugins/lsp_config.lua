@@ -101,7 +101,7 @@ return {
             lspconfig.markdown_oxide.setup({})
             lspconfig.bashls.setup({})
             lspconfig.yamlls.setup({})
-            -- lspconfig.sqls.setup({})
+            -- lspconfig.sqlls.setup({})
             lspconfig.basedpyright.setup({})
             lspconfig.pylsp.setup({})
             lspconfig.docker_compose_language_service.setup({})
