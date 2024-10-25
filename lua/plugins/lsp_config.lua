@@ -89,9 +89,9 @@ return {
             local capabilities = vim.lsp.protocol.make_client_capabilities()
             capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-            lspconfig.postgres_lsp.setup({
-                cmd = { "pglsp" },
-            })
+            -- lspconfig.postgres_lsp.setup({
+            --     cmd = { "pglsp" },
+            -- })
             lspconfig.lua_ls.setup({})
             lspconfig.ts_ls.setup({})
             lspconfig.eslint.setup({})
