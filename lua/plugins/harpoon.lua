@@ -18,32 +18,39 @@ return {
 
         vim.keymap.set("n", "<C-f>", function()
             harpoon:list():select(1)
+            vim.cmd("normal zz")
         end)
 
         vim.keymap.set("n", "<C-b>", function()
             harpoon:list():select(2)
+            vim.cmd("normal zz")
         end)
 
         vim.keymap.set("n", "<C-n>", function()
             harpoon:list():select(3)
+            vim.cmd("normal zz")
         end)
 
         vim.keymap.set("n", "<C-m>", function()
             harpoon:list():select(4)
+            vim.cmd("normal zz")
         end)
 
         for i = 1, 9, 1 do
             vim.keymap.set("n", string.format("<leader>%d", i), function()
                 harpoon:list():select(i)
+                vim.cmd("normal zz")
             end)
         end
 
         vim.keymap.set("n", "<leader>np", function()
             harpoon:list():prev()
+            vim.cmd("normal zz")
         end)
 
         vim.keymap.set("n", "<leader>nn", function()
             harpoon:list():next()
+            vim.cmd("normal zz")
         end)
     end,
 }
