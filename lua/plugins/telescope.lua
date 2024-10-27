@@ -49,6 +49,30 @@ return {
             require("telescope").load_extension("undo")
 
             vim.keymap.set("n", "<leader>pr", require("telescope").extensions.undo.undo)
+
+            vim.keymap.set("n", "<leader>pc", function()
+                builtin.colorscheme()
+                vim.cmd.colorscheme()
+
+                local transparent_groups = {
+                    "Normal",
+                    "NormalFloat",
+                    "LineNr",
+                    "CursorLineNr",
+                    "SignColumn",
+                    "WinSeparator",
+                    "Pmenu",
+                    "TabLine",
+                    "FoldColumn",
+                    "Folded",
+                    "FloatBorder",
+                    "WildMenu",
+                }
+
+                for _, group in ipairs(transparent_groups) do
+                    vim.api.nvim_set_hl(0, group, { bg = "none", fg = "none" })
+                end
+            end)
         end,
     },
     {
