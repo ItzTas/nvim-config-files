@@ -81,9 +81,11 @@ return {
                     enable = true,
                     swap_next = {
                         ["mn"] = "@parameter.inner",
+                        ["mg"] = "@parameter.inner",
                     },
                     swap_previous = {
                         ["mp"] = "@parameter.inner",
+                        ["mG"] = "@parameter.inner",
                     },
                 },
             },
