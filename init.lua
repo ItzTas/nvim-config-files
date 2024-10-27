@@ -4,7 +4,29 @@ require("config.lazy")
 require("itz")
 require("itz.set")
 require("itz.remaps")
-vim.cmd("colorscheme nightfly")
+
+local my_themes = {
+    "night-owl",
+    "zenbones",
+    "apprentice",
+    "nightfox",
+    "gotham",
+    "monokai-pro",
+    "material",
+    "ayu",
+    "nord",
+    "gruvbox",
+    "solarized",
+    "dracula",
+    "PaperColor",
+    "nightfly",
+    "tokyonight",
+    "catppuccin",
+    "rose-pine",
+}
+
+vim.cmd("colorscheme gotham")
+
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })

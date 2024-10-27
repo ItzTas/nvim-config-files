@@ -1,6 +1,54 @@
 return {
 	{
+		"oxfist/night-owl.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("night-owl").setup()
+		end,
+		name = "night-owl",
+	},
+	{
+		"zenbones-theme/zenbones.nvim",
+		dependencies = "rktjmp/lush.nvim",
+		lazy = false,
+		priority = 1000,
+		name = "zenbones",
+	},
+	{
+		"adisen99/apprentice.nvim",
+		dependencies = {
+			"rktjmp/lush.nvim",
+		},
+		name = "apprentice",
+	},
+	{
+		"EdenEast/nightfox.nvim",
+		name = "nightfox",
+	},
+	{
+		"whatyouhide/vim-gotham",
+		name = "gotham",
+	},
+	{
+		"loctvl842/monokai-pro.nvim",
+		name = "monokai-pro",
+	},
+	{
+		"marko-cerovac/material.nvim",
+		name = "material",
+	},
+	{
+		"Shatur/neovim-ayu",
+		name = "ayu",
+	},
+	{
+		"shaunsingh/nord.nvim",
+		name = "nord",
+	},
+	{
 		"ellisonleao/gruvbox.nvim",
+		name = "gruvbox",
 		priority = 1000,
 		config = true,
 	},
