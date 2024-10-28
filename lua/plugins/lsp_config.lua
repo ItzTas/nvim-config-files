@@ -123,7 +123,10 @@ return {
 			lspconfig.html.setup({})
 			lspconfig.cssls.setup({})
 			lspconfig.cssmodules_ls.setup({})
+			lspconfig.css_variables.setup({})
 			lspconfig.csharp_ls.setup({})
+			lspconfig.jsonls.setup({})
+			lspconfig.emmet_ls.setup({})
 		end,
 	},
 }
