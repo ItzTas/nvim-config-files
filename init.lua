@@ -2,8 +2,6 @@ vim.g.mapleader = " "
 vim.opt.termguicolors = true
 require("config.lazy")
 require("itz")
-require("itz.set")
-require("itz.remaps")
 
 local _ = {
     "night-owl",
@@ -62,7 +60,7 @@ local _ = {
     "habamax",
 }
 
-vim.cmd("colorscheme ayu")
+vim.cmd("colorscheme catppuccin-frappe")
 
 local function set_transparent_background()
     local transparent_groups = {
