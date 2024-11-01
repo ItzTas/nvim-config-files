@@ -52,7 +52,10 @@ return {
 
 			vim.keymap.set("n", "<leader>pc", function()
 				builtin.colorscheme()
-				vim.cmd.colorscheme()
+			end)
+
+			vim.keymap.set("n", "<leader><leader>", function()
+				builtin.oldfiles()
 			end)
 		end,
 	},
