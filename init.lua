@@ -110,5 +110,8 @@ vim.api.nvim_create_autocmd("FileType", {
 				vim.lsp.buf_detach_client(0, client.id)
 			end
 		end
+
+        vim.cmd("set relativenumber")
+        vim.cmd("set number")
 	end,
 })
