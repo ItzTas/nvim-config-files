@@ -71,7 +71,7 @@ local function set_transparent_background()
 		"TelescopeNormal",
 		"TelescopeBorder",
 		"LineNr",
-        "CursorLineNr",
+		"CursorLineNr",
 		"VertSplit",
 		"SignColumn",
 		"WinSeparator",
@@ -111,7 +111,7 @@ vim.api.nvim_create_autocmd("FileType", {
 			end
 		end
 
-        vim.cmd("set relativenumber")
-        vim.cmd("set number")
+		vim.cmd("set relativenumber")
+		vim.cmd("set number")
 	end,
 })
