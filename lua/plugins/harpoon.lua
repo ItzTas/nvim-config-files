@@ -16,7 +16,7 @@ return {
             harpoon.ui:toggle_quick_menu(harpoon:list())
         end)
 
-        vim.keymap.set("n", "<C-f>", function()
+        vim.keymap.set("n", "<C-g>", function()
             harpoon:list():select(1)
             vim.cmd("normal zz")
         end)
