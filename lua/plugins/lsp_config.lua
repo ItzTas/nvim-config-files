@@ -93,9 +93,8 @@ return {
                 },
 
                 mapping = cmp.mapping.preset.insert({
-                    ["<c-l>"] = cmp.mapping.complete(),
-                    ["<c-e>"] = cmp.mapping.abort(),
-                    ["<c-y>"] = cmp.mapping.confirm({
+                    ["<C-e>"] = cmp.mapping.abort(),
+                    ["<C-y>"] = cmp.mapping.confirm({
                         select = true,
                     }),
                 }),
