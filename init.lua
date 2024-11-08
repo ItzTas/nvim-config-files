@@ -71,6 +71,13 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
     end,
 })
 
+vim.api.nvim_create_autocmd("ModeChanged", {
+    pattern = "v*",
+    callback = function()
+        vim.api.nvim_set_hl(0, "Visual", { bg = "#5e81ac", fg = "#ffffff" })
+    end,
+})
+
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "netrw",
     callback = function()
