@@ -9,23 +9,23 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 vim.keymap.set("n", "<leader>o", function()
-	local count = vim.v.count1
-	for _ = 1, count do
-		vim.cmd("normal! mz")
-		vim.cmd("normal! o")
-		vim.cmd("normal! `z")
-		vim.cmd("delmarks z")
-	end
+    local count = vim.v.count1
+    for _ = 1, count do
+        vim.cmd("normal! mz")
+        vim.cmd("normal! o")
+        vim.cmd("normal! `z")
+        vim.cmd("delmarks z")
+    end
 end)
 
 vim.keymap.set("n", "<leader>O", function()
-	local count = vim.v.count1
-	for _ = 1, count do
-		vim.cmd("normal! mz")
-		vim.cmd("normal! O")
-		vim.cmd("normal! `z")
-		vim.cmd("delmarks z")
-	end
+    local count = vim.v.count1
+    for _ = 1, count do
+        vim.cmd("normal! mz")
+        vim.cmd("normal! O")
+        vim.cmd("normal! `z")
+        vim.cmd("delmarks z")
+    end
 end)
 
 vim.keymap.set("n", "<leader>-", "<C-w>s")
@@ -80,3 +80,23 @@ vim.keymap.set("i", "<C-v>", '<ESC>"+pi')
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>S", 'yiW:%s/<C-r>"/<C-r>"/gI<Left><Left><Left>')
+
+vim.keymap.set("n", "V", function()
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("V", true, false, true), "n", true)
+    vim.api.nvim_set_hl(0, "Visual", { bg = "#5e81ac", fg = "#ffffff" })
+end)
+
+vim.keymap.set("n", "v", function()
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("v", true, false, true), "n", true)
+    vim.api.nvim_set_hl(0, "Visual", { bg = "#5e81ac", fg = "#ffffff" })
+end)
+
+vim.keymap.set("n", "<C-v>", function()
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<C-v>", true, false, true), "n", true)
+    vim.api.nvim_set_hl(0, "Visual", { bg = "#5e81ac", fg = "#ffffff" })
+end)
+
+vim.keymap.set("n", "<C-q>", function()
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<C-v>", true, false, true), "n", true)
+    vim.api.nvim_set_hl(0, "Visual", { bg = "#5e81ac", fg = "#ffffff" })
+end)

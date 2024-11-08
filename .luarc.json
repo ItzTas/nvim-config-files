@@ -1,14 +1,8 @@
 {
   "runtime.version": "LuaJIT",
-  "runtime.path": [
-    "lua/?.lua",
-    "lua/?/init.lua"
-  ],
-  "diagnostics.globals": ["vim"],
+  "runtime.path": ["lua/?.lua", "lua/?/init.lua"],
+  "diagnostics.globals": ["vim", "set_transparent_background"],
   "workspace.checkThirdParty": false,
-  "workspace.library": [
-    "$VIMRUNTIME",
-    "${3rd}/luv/library"
-  ],
-    "completion.autoRequire": false
+  "workspace.library": ["$VIMRUNTIME", "${3rd}/luv/library"],
+  "completion.autoRequire": false
 }
