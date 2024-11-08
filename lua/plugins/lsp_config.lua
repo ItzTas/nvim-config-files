@@ -108,7 +108,7 @@ return {
 
             lspconfig.lua_ls.setup({})
             lspconfig.ts_ls.setup({})
-            lspconfig.eslint.setup({})
+            -- lspconfig.eslint.setup({})
             lspconfig.gopls.setup({})
             lspconfig.taplo.setup({})
             lspconfig.golangci_lint_ls.setup({})

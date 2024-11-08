@@ -91,6 +91,10 @@ vim.keymap.set("n", "v", function()
     vim.api.nvim_set_hl(0, "Visual", { bg = "#5e81ac", fg = "#ffffff" })
 end)
 
+vim.keymap.set("v", "<C-p>", function()
+    vim.api.nvim_set_hl(0, "Visual", { bg = "#5e81ac", fg = "#ffffff" })
+end)
+
 vim.keymap.set("n", "<C-v>", function()
     vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<C-v>", true, false, true), "n", true)
     vim.api.nvim_set_hl(0, "Visual", { bg = "#5e81ac", fg = "#ffffff" })

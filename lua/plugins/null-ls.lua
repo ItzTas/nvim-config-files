@@ -18,8 +18,8 @@ return {
 					extra_args = { "--single-quote", "--semi", "--jsx-single-quote" },
 					disabled_filetypes = { "yaml" },
 				}),
-				require("none-ls.diagnostics.eslint"),
-				require("none-ls.code_actions.eslint"),
+				-- require("none-ls.diagnostics.eslint"),
+				-- require("none-ls.code_actions.eslint"),
 				null_ls.builtins.formatting.shfmt,
 				null_ls.builtins.diagnostics.actionlint,
 				null_ls.builtins.diagnostics.yamllint.with({
