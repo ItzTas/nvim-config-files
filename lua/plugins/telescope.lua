@@ -48,14 +48,16 @@ return {
 
 			require("telescope").load_extension("undo")
 
-			vim.keymap.set("n", "<leader>pr", require("telescope").extensions.undo.undo)
-
 			vim.keymap.set("n", "<leader>pc", function()
 				builtin.colorscheme()
 			end)
 
 			vim.keymap.set("n", "<leader><leader>", function()
 				builtin.oldfiles()
+			end)
+
+			vim.keymap.set("n", "<leader>pr", function()
+				builtin.quickfix()
 			end)
 		end,
 	},

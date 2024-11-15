@@ -92,3 +92,4 @@ vim.api.nvim_create_autocmd("FileType", {
         vim.cmd("set number")
     end,
 })
+
