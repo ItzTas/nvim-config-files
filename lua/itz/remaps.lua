@@ -14,22 +14,18 @@ do
 
         vim.keymap.set("n", "<C-j>", function()
             if trouble.is_open() then
-                print("DEBUGPRINT[2]: trouble.lua:126 (after if trouble.is_open() then)")
                 trouble.next()
                 trouble.jump()
             else
-                print("DEBUGPRINT[1]: trouble.lua:129 (after else)")
                 vim.diagnostic.goto_next()
             end
         end)
 
         vim.keymap.set("n", "<C-k>", function()
             if trouble.is_open() then
-                print("DEBUGPRINT[3]: trouble.lua:137 (after if trouble.is_open() then)")
                 trouble.prev()
                 trouble.jump()
             else
-                print("DEBUGPRINT[4]: trouble.lua:141 (after else)")
                 vim.diagnostic.goto_prev()
             end
         end)
