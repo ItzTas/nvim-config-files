@@ -75,7 +75,10 @@ return {
                 ["<c-s>"] = "jump_split",
                 ["<c-v>"] = "jump_vsplit",
                 ["}"] = "next",
+                ["]]"] = "next",
+
                 ["{"] = "prev",
+                ["[["] = "prev",
                 dd = "delete",
                 d = { action = "delete", mode = "v" },
                 i = "inspect",
@@ -116,5 +119,17 @@ return {
                 },
             },
         })
+
+        local trouble = require("trouble")
+
+        vim.keymap.set("n", "<C-l>", function()
+            trouble.next()
+            trouble.jump()
+        end)
+
+        vim.keymap.set("n", "<C-h>", function()
+            trouble.prev()
+            trouble.jump()
+        end)
     end,
 }
