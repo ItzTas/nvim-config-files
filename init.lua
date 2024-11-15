@@ -90,5 +90,22 @@ vim.api.nvim_create_autocmd("FileType", {
 
         vim.cmd("set relativenumber")
         vim.cmd("set number")
+
+        vim.keymap.set("n", "<C-j>", function()
+            local dir = vim.fn.expand("<cfile>")
+
+            if dir == "" then
+                print("Nenhum arquivo/diretório selecionado")
+                return
+            end
+
+            local is_dir = vim.fn.isdirectory(dir) == 1
+
+            if is_dir or string.match(dir, "/" .. "$") or dir == ".." then
+                vim.cmd("Ex " .. dir)
+                return
+            end
+            print("not a directory")
+        end, { noremap = true, buffer = 0 })
     end,
 })
