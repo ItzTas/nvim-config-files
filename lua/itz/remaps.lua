@@ -106,6 +106,8 @@ vim.keymap.set("n", "<leader>mr", function()
 	vim.cmd("copen")
 end)
 
+vim.keymap.set("n", "<leader>px", ":!chmod +x %<CR>")
+
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "qf",
 	callback = function()
