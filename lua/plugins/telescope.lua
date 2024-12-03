@@ -48,7 +48,7 @@ return {
 
 			require("telescope").load_extension("undo")
 
-			vim.keymap.set("n", "<leader>pc", function()
+			vim.keymap.set("n", "<leader>p[", function()
 				builtin.colorscheme()
 			end)
 
