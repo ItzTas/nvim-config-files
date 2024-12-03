@@ -21,17 +21,17 @@ return {
             vim.cmd("normal zz")
         end)
 
-        vim.keymap.set("n", "<C-b>", function()
+        vim.keymap.set("n", "<C-h>", function()
             harpoon:list():select(2)
             vim.cmd("normal zz")
         end)
 
-        vim.keymap.set("n", "<C-n>", function()
+        vim.keymap.set("n", "<C-b>", function()
             harpoon:list():select(3)
             vim.cmd("normal zz")
         end)
 
-        vim.keymap.set("n", "<C-m>", function()
+        vim.keymap.set("n", "<C-n>", function()
             harpoon:list():select(4)
             vim.cmd("normal zz")
         end)

@@ -67,7 +67,6 @@ vim.keymap.set("n", "<leader>>", "<C-w>>")
 vim.keymap.set({ "n", "v", "x", "o", "i" }, "<C-c>", "<Esc>")
 vim.keymap.set("i", "ĉ", "<Esc>")
 
-vim.keymap.set("n", "<CR>", "<Nop>")
 vim.keymap.set("n", "q:", "<Nop>")
 vim.keymap.set("n", "<C-z>", "<Nop>")
 
