@@ -77,35 +77,3 @@ vim.api.nvim_create_autocmd("ModeChanged", {
         vim.api.nvim_set_hl(0, "Visual", { bg = "#5e81ac", fg = "#ffffff" })
     end,
 })
-
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = "netrw",
-    callback = function()
-        local clients = vim.lsp.buf_get_clients(0)
-        if next(clients) ~= nil then
-            for _, client in pairs(clients) do
-                vim.lsp.buf_detach_client(0, client.id)
-            end
-        end
-
-        vim.cmd("set relativenumber")
-        vim.cmd("set number")
-
-        vim.keymap.set("n", "<C-j>", function()
-            local dir = vim.fn.expand("<cfile>")
-
-            if dir == "" then
-                print("Nenhum arquivo/diretório selecionado")
-                return
-            end
-
-            local is_dir = vim.fn.isdirectory(dir) == 1
-
-            if is_dir or string.match(dir, "/" .. "$") or dir == ".." then
-                vim.cmd("Ex " .. dir)
-                return
-            end
-            print("not a directory")
-        end, { noremap = true, buffer = 0 })
-    end,
-})

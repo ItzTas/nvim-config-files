@@ -1,5 +1,4 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
@@ -87,7 +86,7 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "<C-o>", "<C-o>zz")
 vim.keymap.set("n", "<C-i>", "<C-i>zz")
 
-vim.keymap.set("i", "ŧ", "() => { }<Left>")
+vim.keymap.set("i", "ŧ", "=>")
 
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
@@ -113,9 +112,6 @@ do
     end)
 end
 
-vim.keymap.set("n", "<leader>ex", ":!chmod +x %<CR>")
-vim.keymap.set("n", "<leader>es", ":!exercism submit %<CR>")
-
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "qf",
     callback = function()
@@ -124,6 +120,9 @@ vim.api.nvim_create_autocmd("FileType", {
         vim.keymap.set("n", "<C-r>", ":cdo %s/" .. vim.g.escaped_word .. "//gc<left><left><left>", { buffer = 0 })
     end,
 })
+
+vim.keymap.set("n", "<leader>ex", ":!chmod +x %<CR>")
+vim.keymap.set("n", "<leader>es", ":!exercism submit %<CR>")
 
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 vim.keymap.set({ "n", "v" }, "<leader>x", [["_x]])
