@@ -19,32 +19,32 @@ return {
         config = function()
             local builtin = require("telescope.builtin")
 
-            vim.keymap.set("n", "<leader>pf", function()
+            vim.keymap.set("n", "<leader>jf", function()
                 builtin.find_files()
             end, { desc = "Find Files" })
 
-            vim.keymap.set("n", "<C-p>", function()
+            vim.keymap.set("n", "<C-n>", function()
                 builtin.git_files()
             end, { desc = "Find Git Files" })
 
-            vim.keymap.set("n", "<leader>pw", function()
+            vim.keymap.set("n", "<leader>jw", function()
                 local word = vim.fn.expand("<cword>")
                 builtin.grep_string({ search = word })
             end)
 
-            vim.keymap.set("n", "<leader>pW", function()
+            vim.keymap.set("n", "<leader>jW", function()
                 local word = vim.fn.expand("<cWORD>")
                 builtin.grep_string({ search = word })
             end)
 
-            vim.keymap.set("n", "<leader>ps", function()
+            vim.keymap.set("n", "<leader>js", function()
                 local word = vim.fn.input("Grep > ")
                 builtin.grep_string({ search = word })
             end, { desc = "Grep String" })
 
             vim.keymap.set("n", "<leader>vh", builtin.help_tags)
 
-            vim.keymap.set("n", "<leader>pt", builtin.live_grep)
+            vim.keymap.set("n", "<leader>jk", builtin.live_grep)
 
             require("telescope").load_extension("undo")
 
@@ -56,11 +56,11 @@ return {
                 builtin.oldfiles()
             end)
 
-            vim.keymap.set("n", "<leader>pr", function()
+            vim.keymap.set("n", "<leader>jr", function()
                 builtin.quickfix()
             end)
 
-            vim.keymap.set("n", "<leader>pq", function()
+            vim.keymap.set("n", "<leader>jq", function()
                 builtin.lsp_references()
             end)
         end,

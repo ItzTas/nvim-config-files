@@ -71,7 +71,7 @@ return {
                 ["<C-j>"] = { "actions.select", opts = {} },
                 ["<C-t>"] = { "actions.select", opts = { vertical = true } },
                 ["<C-y>"] = "actions.preview",
-                ["<C-n>"] = { "actions.close", mode = "n" },
+                ["<C-p>"] = { "actions.close", mode = "n" },
                 ["<C-l>"] = "actions.refresh",
                 ["<C-k>"] = { "actions.parent", mode = "n" },
                 ["<C-h>"] = { "actions.open_cwd", mode = "n" },
@@ -113,6 +113,6 @@ return {
             },
         })
 
-        vim.keymap.set("n", "<leader>pv", ":Oil<CR>")
+        vim.keymap.set("n", "<leader>jv", ":Oil<CR>")
     end,
 }

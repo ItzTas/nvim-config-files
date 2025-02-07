@@ -120,7 +120,7 @@ return {
             lspconfig.markdown_oxide.setup({})
             lspconfig.bashls.setup({})
             lspconfig.yamlls.setup({})
-            lspconfig.rls.setup({})
+            lspconfig.rust_analyzer.setup({})
             lspconfig.basedpyright.setup({})
             lspconfig.pylsp.setup({})
             lspconfig.docker_compose_language_service.setup({})
