@@ -93,14 +93,17 @@ return {
                 },
 
                 mapping = cmp.mapping.preset.insert({
+                    ["<Home>"] = cmp.mapping.confirm({
+                        select = true,
+                    }),
+                    ["<C-j>"] = cmp.mapping.select_next_item(),
+                    ["<C-k>"] = cmp.mapping.select_prev_item(),
                     ["<C-e>"] = cmp.mapping.abort(),
                     ["<C-y>"] = cmp.mapping.confirm({
                         select = true,
                     }),
                 }),
             })
-
-            -- cmp.setup.filetype({ "sql", "markdown" }, {})
 
             local lspconfig = require("lspconfig")
             local capabilities = vim.lsp.protocol.make_client_capabilities()
