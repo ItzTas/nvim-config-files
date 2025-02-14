@@ -4,7 +4,7 @@ return {
         tag = "0.1.8",
         dependencies = {
             "nvim-lua/plenary.nvim",
-            "debugloop/telescope-undo.nvim",
+            "nvim-telescope/telescope-ui-select.nvim",
         },
         config = function()
             local telescope = require("telescope")
@@ -28,7 +28,6 @@ return {
                 },
             })
 
-            -- Mapeamentos personalizados
             vim.keymap.set("n", "<leader>jf", function()
                 builtin.find_files()
             end, { desc = "Find Files" })
@@ -55,8 +54,6 @@ return {
             vim.keymap.set("n", "<leader>vh", builtin.help_tags)
 
             vim.keymap.set("n", "<leader>jk", builtin.live_grep)
-
-            telescope.load_extension("undo")
 
             vim.keymap.set("n", "<leader>p[", function()
                 builtin.colorscheme()
@@ -89,4 +86,3 @@ return {
         end,
     },
 }
-
