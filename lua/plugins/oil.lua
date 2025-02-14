@@ -74,11 +74,11 @@ return {
                 ["<C-p>"] = { "actions.close", mode = "n" },
                 ["<C-l>"] = "actions.refresh",
                 ["<C-k>"] = { "actions.parent", mode = "n" },
-                ["<C-h>"] = { "actions.open_cwd", mode = "n" },
+                ["<C-h>"] = { "actions.toggle_hidden", mode = "n" },
+                ["<C-x>"] = { "actions.open_cwd", mode = "n" },
                 ["<leader>cd"] = { "actions.cd", mode = "n" },
                 ["gs"] = { "actions.change_sort", mode = "n" },
                 ["gx"] = "actions.open_external",
-                ["g."] = { "actions.toggle_hidden", mode = "n" },
                 ["g\\"] = { "actions.toggle_trash", mode = "n" },
             },
             -- Set to false to disable all of the above keymaps
