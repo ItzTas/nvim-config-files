@@ -6,19 +6,29 @@ return {
             "nvim-lua/plenary.nvim",
             "debugloop/telescope-undo.nvim",
         },
-        opts = {
-            defaults = {
-                mappings = {
-                    i = {
-                        ["<C-u>"] = false,
-                        ["<C-d>"] = false,
-                    },
-                },
-            },
-        },
         config = function()
+            local telescope = require("telescope")
+            local actions = require("telescope.actions")
             local builtin = require("telescope.builtin")
 
+            telescope.setup({
+                defaults = {
+                    mappings = {
+                        i = {
+                            ["<C-j>"] = actions.move_selection_next,
+                            ["<C-k>"] = actions.move_selection_previous,
+                            ["<C-y>"] = actions.select_default,
+                        },
+                        n = {
+                            ["<C-j>"] = actions.move_selection_next,
+                            ["<C-k>"] = actions.move_selection_previous,
+                            ["<C-y>"] = actions.select_default,
+                        },
+                    },
+                },
+            })
+
+            -- Mapeamentos personalizados
             vim.keymap.set("n", "<leader>jf", function()
                 builtin.find_files()
             end, { desc = "Find Files" })
@@ -46,7 +56,7 @@ return {
 
             vim.keymap.set("n", "<leader>jk", builtin.live_grep)
 
-            require("telescope").load_extension("undo")
+            telescope.load_extension("undo")
 
             vim.keymap.set("n", "<leader>p[", function()
                 builtin.colorscheme()
@@ -79,3 +89,4 @@ return {
         end,
     },
 }
+
