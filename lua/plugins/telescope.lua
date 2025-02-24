@@ -11,7 +11,13 @@ return {
             local actions = require("telescope.actions")
             local builtin = require("telescope.builtin")
 
+            require("telescope").load_extension("ui-select")
             telescope.setup({
+                extensions = {
+                    ["ui-select"] = {
+                        require("telescope.themes").get_dropdown({}),
+                    },
+                },
                 defaults = {
                     mappings = {
                         i = {
@@ -70,19 +76,6 @@ return {
             vim.keymap.set("n", "<leader>jq", function()
                 builtin.lsp_references()
             end)
-        end,
-    },
-    {
-        "nvim-telescope/telescope-ui-select.nvim",
-        config = function()
-            require("telescope").setup({
-                extensions = {
-                    ["ui-select"] = {
-                        require("telescope.themes").get_dropdown({}),
-                    },
-                },
-            })
-            require("telescope").load_extension("ui-select")
         end,
     },
 }
