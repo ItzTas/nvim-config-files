@@ -1,6 +1,6 @@
 return {
     "ItzTas/go-erreturner.nvim",
-    dir = "/home/talinux/workspace/github.com/ItzTas/vimPlugins/go-erreturner.nvim",
+    -- dir = "/home/talinux/workspace/github.com/ItzTas/vimPlugins/go-erreturner.nvim",
     dependencies = {
         "nvim-treesitter/nvim-treesitter",
     },
