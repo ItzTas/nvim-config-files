@@ -6,12 +6,12 @@ return {
             dependencies = {
                 "hrsh7th/cmp-path",
                 "hrsh7th/cmp-buffer",
-                "neovim/nvim-lspconfig", -- Configuração de LSP
-                "williamboman/mason.nvim", -- Gerenciador de servidores LSP
+                "neovim/nvim-lspconfig",             -- Configuração de LSP
+                "williamboman/mason.nvim",           -- Gerenciador de servidores LSP
                 "williamboman/mason-lspconfig.nvim", -- Integração com lspconfig
-                "hrsh7th/nvim-cmp",      -- Autocompletar
-                "hrsh7th/cmp-nvim-lsp",  -- Autocompletar para LSP
-                "L3MON4D3/LuaSnip",      -- Snippets
+                "hrsh7th/nvim-cmp",                  -- Autocompletar
+                "hrsh7th/cmp-nvim-lsp",              -- Autocompletar para LSP
+                "L3MON4D3/LuaSnip",                  -- Snippets
             },
         },
         config = function()
@@ -116,6 +116,7 @@ return {
             -- lspconfig.eslint.setup({})
             lspconfig.angularls.setup({})
             lspconfig.prismals.setup({})
+            lspconfig.hyprls.setup({})
             lspconfig.gopls.setup({})
             lspconfig.taplo.setup({})
             lspconfig.golangci_lint_ls.setup({})
