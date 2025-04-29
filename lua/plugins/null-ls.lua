@@ -32,6 +32,7 @@ return {
                 null_ls.builtins.code_actions.gitsigns,
                 -- null_ls.builtins.formatting.sqlfmt,
                 -- null_ls.builtins.diagnostics.mypy.with({}),
+                null_ls.builtins.diagnostics.zsh,
                 null_ls.builtins.formatting.black,
                 null_ls.builtins.diagnostics.hadolint,
                 null_ls.builtins.formatting.csharpier,
