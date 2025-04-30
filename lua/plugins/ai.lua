@@ -1,18 +1,9 @@
 return {
-	"codota/tabnine-nvim",
-	build = "./dl_binaries.sh",
-	config = function()
-		require("tabnine").setup({
-			disable_auto_comment = true,
-			accept_keymap = "<C-b>",
-			dismiss_keymap = "<C-]>",
-			debounce_ms = 800,
-			suggestion_color = { gui = "#808080", cterm = 244 },
-			codelens_color = { gui = "#808080", cterm = 244 },
-			codelens_enabled = true,
-			exclude_filetypes = { "TelescopePrompt", "NvimTree" },
-			log_file_path = nil,
-			ignore_certificate_errors = false,
-		})
-	end,
+    "monkoose/neocodeium",
+    event = "VeryLazy",
+    config = function()
+        local neocodeium = require("neocodeium")
+        neocodeium.setup()
+        vim.keymap.set("i", "<C-b>", neocodeium.accept)
+    end,
 }
