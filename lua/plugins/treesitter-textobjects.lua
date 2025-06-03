@@ -34,34 +34,33 @@ return {
                     enable = true,
                     set_jumps = true, -- whether to set jumps in the jumplist
                     goto_next_start = {
-                        ["]m"] = "@function.outer",
                         ["]]"] = { query = "@class.outer", desc = "Next class start" },
                         ["]o"] = "@loop.*",
                         -- ["]o"] = { query = { "@loop.inner", "@loop.outer" } }
                         ["]z"] = { query = "@fold", query_group = "folds", desc = "Next fold" },
                         ["mp"] = "@parameter.inner",
                         ["ml"] = { query = "@local.scope", query_group = "locals", desc = "Next scope" },
+                        ["]nfs"] = "@function.outer",
                     },
                     goto_previous_start = {
                         ["MP"] = "@parameter.inner",
                         ["ML"] = { query = "@local.scope", query_group = "locals", desc = "Next scope" },
-                        ["[m"] = "@function.outer",
                         ["[["] = "@class.outer",
                     },
                     goto_next_end = {
-                        ["]M"] = "@function.outer",
+                        ["]nfe"] = "@function.outer",
                         ["]["] = "@class.outer",
                     },
                     goto_previous_end = {
-                        ["[M"] = "@function.outer",
+                        ["]nfo"] = "@function.outer",
                         ["[]"] = "@class.outer",
                     },
                     goto_next = {
+                        ["[ni"] = "@conditional.outer",
                         ["mn"] = "@block.inner",
-                        ["mi"] = "@conditional.outer",
                     },
                     goto_previous = {
-                        ["MI"] = "@conditional.outer",
+                        ["]ni"] = "@conditional.outer",
                         ["MN"] = "@block.inner",
                     },
                 },
