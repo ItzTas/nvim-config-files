@@ -7,6 +7,8 @@ return {
     },
     config = function()
         require("go").setup()
+
+        vim.keymap.set("n", "<leader>gt", vim.cmd.GoAddTag)
     end,
     event = { "CmdlineEnter" },
     ft = { "go", "gomod" },

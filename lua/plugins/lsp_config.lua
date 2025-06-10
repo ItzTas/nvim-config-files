@@ -105,38 +105,36 @@ return {
                 }),
             })
 
-            local lspconfig = require("lspconfig")
             local capabilities = vim.lsp.protocol.make_client_capabilities()
             capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-            lspconfig.lua_ls.setup({})
-            lspconfig.ts_ls.setup({})
-            lspconfig.jdtls.setup({})
-            -- lspconfig.java_language_server.setup({})
-            -- lspconfig.eslint.setup({})
-            lspconfig.angularls.setup({})
-            lspconfig.prismals.setup({})
-            lspconfig.hyprls.setup({})
-            lspconfig.gopls.setup({})
-            lspconfig.taplo.setup({})
-            lspconfig.golangci_lint_ls.setup({})
-            lspconfig.marksman.setup({})
-            lspconfig.markdown_oxide.setup({})
-            lspconfig.bashls.setup({})
-            lspconfig.yamlls.setup({})
-            lspconfig.rust_analyzer.setup({})
-            lspconfig.basedpyright.setup({})
-            lspconfig.pylsp.setup({})
-            lspconfig.docker_compose_language_service.setup({})
-            lspconfig.dockerls.setup({})
-            lspconfig.html.setup({})
-            lspconfig.jdtls.setup({})
-            lspconfig.cssls.setup({})
-            lspconfig.cssmodules_ls.setup({})
-            lspconfig.css_variables.setup({})
-            lspconfig.csharp_ls.setup({})
-            lspconfig.jsonls.setup({})
-            lspconfig.emmet_ls.setup({})
+            vim.lsp.enable({
+                'eslint',
+                'lua_ls',
+                'tsserver',
+                'jdtls',
+                'angularls',
+                'prismals',
+                'hyprls',
+                'gopls',
+                'taplo',
+                'golangci_lint_ls',
+                'marksman',
+                'markdown_oxide',
+                'bashls',
+                'yamlls',
+                'rust_analyzer',
+                'basedpyright',
+                'pylsp',
+                'dockerls',
+                'html',
+                'cssls',
+                'cssmodules_ls',
+                'css_variables',
+                'csharp_ls',
+                'jsonls',
+                'emmet_ls',
+            })
         end,
     },
 }

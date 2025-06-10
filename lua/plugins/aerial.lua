@@ -11,13 +11,13 @@ return {
             on_attach = function(bufnr)
                 vim.keymap.set(
                     "n",
-                    "[ne",
+                    "]ne",
                     "<cmd>execute 'AerialPrev' . (v:count > 0 ? v:count : 1)<CR>",
                     { buffer = bufnr }
                 )
                 vim.keymap.set(
                     "n",
-                    "]ne",
+                    "[ne",
                     "<cmd>execute 'AerialNext' . (v:count > 0 ? v:count : 1)<CR>",
                     { buffer = bufnr }
                 )
