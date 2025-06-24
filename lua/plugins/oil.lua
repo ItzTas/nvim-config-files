@@ -113,6 +113,6 @@ return {
             },
         })
 
-        vim.keymap.set("n", "<leader>jh", ":Oil<CR>")
+        vim.keymap.set("n", "<leader>kj", ":Oil<CR>")
     end,
 }

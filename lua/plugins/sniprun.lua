@@ -7,7 +7,6 @@ return {
     -- (instead of fetching a binary from the github release). Requires Rust >= 1.65
 
     config = function()
-        require("sniprun").setup({
-        })
+        require("sniprun").setup({})
     end,
 }
