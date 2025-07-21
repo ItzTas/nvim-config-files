@@ -13,7 +13,8 @@ return {
                 null_ls.builtins.formatting.gofumpt,
                 null_ls.builtins.formatting.goimports_reviser,
                 null_ls.builtins.formatting.prettierd.with({
-                    extra_args = { "--single-quote", "--semi", "--jsx-single-quote" },
+                    -- extra_args = { "--single-quote", "--semi", "--jsx-single-quote" },
+                    extra_args = { "--semi" },
                     disabled_filetypes = { "yaml" },
                 }),
                 null_ls.builtins.formatting.shfmt,
@@ -22,7 +23,7 @@ return {
                 null_ls.builtins.formatting.csharpier,
 
                 -- ⚠️ Diagnostics
-                null_ls.builtins.diagnostics.dotenv_linter,
+                -- null_ls.builtins.diagnostics.dotenv_linter,
                 null_ls.builtins.diagnostics.actionlint,
                 null_ls.builtins.diagnostics.yamllint.with({
                     extra_args = { "-d", "{rules: {document-start: false}}" },
