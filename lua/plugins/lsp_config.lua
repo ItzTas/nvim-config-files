@@ -1,18 +1,15 @@
 return {
     {
-        "neovim/nvim-lspconfig",
+        "VonHeikemen/lsp-zero.nvim",
         dependencies = {
-            "VonHeikemen/lsp-zero.nvim",
-            dependencies = {
-                "hrsh7th/cmp-path",
-                "hrsh7th/cmp-buffer",
-                "neovim/nvim-lspconfig",             -- Configuração de LSP
-                "williamboman/mason.nvim",           -- Gerenciador de servidores LSP
-                "williamboman/mason-lspconfig.nvim", -- Integração com lspconfig
-                "hrsh7th/nvim-cmp",                  -- Autocompletar
-                "hrsh7th/cmp-nvim-lsp",              -- Autocompletar para LSP
-                "L3MON4D3/LuaSnip",                  -- Snippets
-            },
+            "hrsh7th/cmp-path",
+            "hrsh7th/cmp-buffer",
+            "neovim/nvim-lspconfig",    -- Configuração de LSP
+            "williamboman/mason.nvim",  -- Gerenciador de servidores LSP
+            "williamboman/mason-lspconfig.nvim", -- Integração com lspconfig
+            "hrsh7th/nvim-cmp",         -- Autocompletar
+            "hrsh7th/cmp-nvim-lsp",     -- Autocompletar para LSP
+            "L3MON4D3/LuaSnip",         -- Snippets
         },
         config = function()
             local lsp_zero = require("lsp-zero")
@@ -109,31 +106,55 @@ return {
             capabilities.textDocument.completion.completionItem.snippetSupport = true
 
             vim.lsp.enable({
-                'eslint',
-                'lua_ls',
-                'tsserver',
-                'jdtls',
-                'angularls',
-                'prismals',
-                'hyprls',
-                'gopls',
-                'taplo',
-                'golangci_lint_ls',
-                'marksman',
-                'markdown_oxide',
-                'bashls',
-                'yamlls',
-                'rust_analyzer',
-                'basedpyright',
-                'pylsp',
-                'dockerls',
-                'html',
-                'cssls',
-                'cssmodules_ls',
-                'css_variables',
-                'csharp_ls',
-                'jsonls',
-                'emmet_ls',
+                "eslint",
+                "lua_ls",
+                "tsserver",
+                "jdtls",
+                "angularls",
+                "prismals",
+                "hyprls",
+                "gopls",
+                "taplo",
+                "golangci_lint_ls",
+                "marksman",
+                "markdown_oxide",
+                "bashls",
+                "yamlls",
+                "rust_analyzer",
+
+                -- "phpactor",
+                "intelephense",
+
+                -- Python
+                "basedpyright",
+                -- "pyright",
+                "ruff",
+
+                "dockerls",
+                "docker_language_server",
+
+                "html",
+
+                "cssls",
+                "cssmodules_ls",
+                "css_variables",
+
+                "csharp_ls",
+                "jsonls",
+                "emmet_ls",
+            })
+
+            local default_handler = vim.lsp.handlers["textDocument/publishDiagnostics"]
+            vim.lsp.config("bashls", {
+                handlers = {
+                    ["textDocument/publishDiagnostics"] = function(err, result, ctx, config)
+                        local fname = vim.fn.fnamemodify(vim.uri_to_fname(result.uri), ":t")
+                        if fname:match("^%.env") then
+                            return
+                        end
+                        default_handler(err, result, ctx, config)
+                    end,
+                },
             })
         end,
     },
