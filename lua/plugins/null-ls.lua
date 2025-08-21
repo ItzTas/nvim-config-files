@@ -22,11 +22,12 @@ return {
                 null_ls.builtins.formatting.goimports,
                 null_ls.builtins.formatting.gofumpt,
                 null_ls.builtins.formatting.goimports_reviser,
-                -- null_ls.builtins.formatting.prettierd.with({
-                --     -- extra_args = { "--single-quote", "--semi", "--jsx-single-quote" },
-                --     extra_args = { "--semi" },
-                --     disabled_filetypes = { "yaml" },
-                -- }),
+                null_ls.builtins.formatting.prettierd.with({
+                    -- extra_args = { "--single-quote", "--semi", "--jsx-single-quote" },
+                    extra_args = { "--semi" },
+                    disabled_filetypes = { "yaml" },
+                    filetypes = { "json", "typescript", "javascript", "typescriptreact", "javascriptreact" },
+                }),
                 null_ls.builtins.formatting.shfmt,
                 null_ls.builtins.formatting.yamlfmt,
                 -- null_ls.builtins.formatting.black,
