@@ -32,6 +32,7 @@ return {
                 null_ls.builtins.formatting.yamlfmt,
                 -- null_ls.builtins.formatting.black,
                 null_ls.builtins.formatting.csharpier,
+                null_ls.builtins.diagnostics.zsh,
                 null_ls.builtins.formatting.shellharden,
 
                 null_ls.builtins.code_actions.gomodifytags,

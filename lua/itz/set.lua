@@ -1,4 +1,5 @@
 vim.opt.guicursor = ""
+vim.g.python3_host_prog = vim.fn.expand("~/.venv-nvim/bin/python")
 
 vim.opt.number = true
 vim.opt.relativenumber = true

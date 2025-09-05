@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+vim.g.maplocalleader = "<CR>"
 -- vim.opt.termguicolors = true
 require("config.lazy")
 require("itz")
