@@ -42,10 +42,10 @@ return {
                     ":MoltenDelete<CR>",
                     { buffer = event.buf, silent = true, desc = "molten delete cell" }
                 )
-                vim.keymap.set("n", "<leader>oh", ":MoltenHideOutput<CR>", { silent = true, desc = "hide output" })
+                vim.keymap.set("n", "<leader>mh", ":MoltenHideOutput<CR>", { silent = true, desc = "hide output" })
                 vim.keymap.set(
                     "n",
-                    "<leader>os",
+                    "<leader>ms",
                     ":noautocmd MoltenEnterOutput<CR>",
                     { buffer = event.buf, silent = true, desc = "show/enter output" }
                 )
