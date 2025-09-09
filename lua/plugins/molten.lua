@@ -2,7 +2,10 @@ return {
     "https://github.com/benlubas/molten-nvim",
     dependencies = { "https://github.com/3rd/image.nvim" },
     build = ":UpdateRemotePlugins",
-    config = function()
+    init = function()
+        vim.g.python3_host_prog = vim.fn.expand(".venv/bin/python")
+        vim.g.molten_kernel = "python3"
+
         vim.api.nvim_create_autocmd({ "BufEnter" }, {
             pattern = { "*.py", "*.md", "*.ipynb", "*.qmd" },
             callback = function(event)
@@ -14,7 +17,7 @@ return {
                 )
                 vim.keymap.set(
                     "n",
-                    "<leader>e",
+                    "<leader>me",
                     ":MoltenEvaluateOperator<CR>",
                     { buffer = event.buf, silent = true, desc = "run operator selection" }
                 )
@@ -26,7 +29,7 @@ return {
                 )
                 vim.keymap.set(
                     "n",
-                    "<leader>rr",
+                    "<leader>mr",
                     ":MoltenReevaluateCell<CR>",
                     { buffer = event.buf, silent = true, desc = "re-evaluate cell" }
                 )
