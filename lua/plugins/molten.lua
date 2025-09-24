@@ -3,8 +3,7 @@ return {
     dependencies = { "https://github.com/3rd/image.nvim" },
     build = ":UpdateRemotePlugins",
     init = function()
-        vim.g.python3_host_prog = vim.fn.expand(".venv/bin/python")
-        vim.g.molten_kernel = "python3"
+        vim.g.molten_image_provider = "image.nvim"
 
         vim.api.nvim_create_autocmd({ "BufEnter" }, {
             pattern = { "*.py", "*.md", "*.ipynb", "*.qmd" },
@@ -23,7 +22,7 @@ return {
                 )
                 vim.keymap.set(
                     "n",
-                    "<leader>rl",
+                    "<leader>ml",
                     ":MoltenEvaluateLine<CR>",
                     { buffer = event.buf, silent = true, desc = "evaluate line" }
                 )

@@ -1,5 +1,5 @@
 vim.opt.guicursor = ""
-vim.g.python3_host_prog = vim.fn.expand(".venv/bin/python")
+vim.g.python3_host_prog = vim.fn.expand("~/.virtualenvs/neovim/bin/python")
 
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -39,3 +39,6 @@ vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldlevel = 99
 
 vim.opt.wrap = true
+
+vim.g.python3_host_prog = vim.fn.expand("~/.virtualenvs/neovim/bin/python3")
+vim.g.molten_kernel = "python3"

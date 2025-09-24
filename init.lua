@@ -1,9 +1,9 @@
 vim.g.mapleader = " "
-vim.g.maplocalleader = "<CR>"
+vim.g.maplocalleader = "ç"
 -- vim.opt.termguicolors = true
 require("config.lazy")
-require("itz")
 require("functions")
+require("itz")
 
 local _ = {
     "night-owl",

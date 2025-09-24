@@ -42,6 +42,7 @@ return {
             "williamboman/mason.nvim",
             "nvimtools/none-ls.nvim",
         },
+        enabled = false,
         config = function()
             require("plugins.null-ls")
 
