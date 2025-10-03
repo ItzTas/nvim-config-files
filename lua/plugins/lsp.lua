@@ -156,6 +156,9 @@ return {
                     end,
                 },
             })
+            vim.lsp.config("tsserver", {
+                single_file_support = true,
+            })
         end,
     },
 }
