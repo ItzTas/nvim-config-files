@@ -13,8 +13,8 @@ return {
                 null_ls.builtins.diagnostics.yamllint.with({
                     extra_args = { "-d", "{rules: {document-start: false}}" },
                 }),
-                -- null_ls.builtins.diagnostics.markdownlint,
-                null_ls.builtins.diagnostics.ltrs,
+                null_ls.builtins.diagnostics.markdownlint,
+                -- null_ls.builtins.diagnostics.ltrs,
                 null_ls.builtins.diagnostics.zsh,
                 null_ls.builtins.diagnostics.hadolint,
 
@@ -30,7 +30,7 @@ return {
                 -- }),
                 null_ls.builtins.formatting.shfmt,
                 null_ls.builtins.formatting.yamlfmt,
-                -- null_ls.builtins.formatting.black,
+                null_ls.builtins.formatting.black,
                 null_ls.builtins.formatting.csharpier,
                 null_ls.builtins.diagnostics.zsh,
                 null_ls.builtins.formatting.shellharden,

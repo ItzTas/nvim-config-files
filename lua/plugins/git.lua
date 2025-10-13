@@ -34,11 +34,17 @@ return {
         },
         config = function()
             require("gitsigns").setup({
+                current_line_blame = true,
                 on_attach = function(bufnr)
+                    local function map(mode, l, r, opts)
+                        opts = opts or {}
+                        opts.buffer = bufnr
+                        vim.keymap.set(mode, l, r, opts)
+                    end
                     local gitsigns = require("gitsigns")
 
                     -- Navigation
-                    vim.keymap.set("n", "]c", function()
+                    map("n", "]c", function()
                         if vim.wo.diff then
                             vim.cmd.normal({ "]c", bang = true })
                         else
@@ -46,7 +52,7 @@ return {
                         end
                     end)
 
-                    vim.keymap.set("n", "[c", function()
+                    map("n", "[c", function()
                         if vim.wo.diff then
                             vim.cmd.normal({ "[c", bang = true })
                         else
@@ -55,20 +61,20 @@ return {
                     end)
 
                     -- Actions
-                    vim.keymap.set({ "v", "x" }, "<leader>grh", function()
+                    map({ "v", "x" }, "<leader>grh", function()
                         gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
                     end)
-                    vim.keymap.set({ "v", "x" }, "<leader>grr", function()
+                    map({ "v", "x" }, "<leader>grr", function()
                         gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
                     end)
-                    vim.keymap.set("n", "<leader>gru", gitsigns.undo_stage_hunk)
-                    vim.keymap.set("n", "<leader>grr", gitsigns.reset_buffer)
-                    vim.keymap.set("n", "<leader>gp", gitsigns.preview_hunk)
-                    vim.keymap.set("n", "<leader>gb", function()
+                    map("n", "<leader>gru", gitsigns.undo_stage_hunk)
+                    map("n", "<leader>grr", gitsigns.reset_buffer)
+                    map("n", "<leader>gp", gitsigns.preview_hunk)
+                    map("n", "<leader>gb", function()
                         gitsigns.blame_line({ full = true })
                     end)
                     -- Text object
-                    vim.keymap.set({ "o", "x" }, "<leader>c", ":<C-U>Gitsigns select_hunk<CR>")
+                    map({ "o", "x" }, "<leader>c", ":<C-U>Gitsigns select_hunk<CR>")
                 end,
             })
         end,

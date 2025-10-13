@@ -65,13 +65,6 @@ local _ = {
 vim.cmd("colorscheme rose-pine-moon")
 set_transparent_background()
 
-vim.api.nvim_create_autocmd({ "BufEnter" }, {
-    pattern = { "*" },
-    callback = function()
-        require("gitsigns").toggle_current_line_blame()
-    end,
-})
-
 vim.api.nvim_create_autocmd("ModeChanged", {
     pattern = "v*",
     callback = function()
