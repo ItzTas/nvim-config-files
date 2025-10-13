@@ -119,6 +119,7 @@ return {
                 "marksman",
                 "markdown_oxide",
                 "bashls",
+                "taplo",
                 "yamlls",
                 "rust_analyzer",
 
@@ -158,6 +159,11 @@ return {
             })
             vim.lsp.config("tsserver", {
                 single_file_support = true,
+            })
+            vim.lsp.config("taplo", {
+                cmd = { "taplo", "lsp", "stdio" },
+                filetypes = { "toml" },
+                root_markers = { ".taplo.toml", "taplo.toml", ".git" },
             })
         end,
     },

@@ -7,7 +7,7 @@ end
 function M.format_js_ts(bufnr)
     bufnr = bufnr or vim.api.nvim_get_current_buf()
 
-    local clients = vim.lsp.get_active_clients({ bufnr = bufnr })
+    local clients = vim.lsp.get_clients({ bufnr = bufnr })
     local has_other_formatter = false
 
     for _, client in ipairs(clients) do
