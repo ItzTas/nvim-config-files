@@ -71,3 +71,11 @@ vim.api.nvim_create_autocmd("ModeChanged", {
         vim.api.nvim_set_hl(0, "Visual", { bg = "#5e81ac", fg = "#ffffff" })
     end,
 })
+
+vim.api.nvim_create_autocmd({"BufRead","BufNewFile"}, {
+  pattern = "*.prototools",
+  callback = function()
+    vim.bo.filetype = "toml"
+  end
+})
+
