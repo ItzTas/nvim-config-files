@@ -135,6 +135,7 @@ return {
                 "docker_language_server",
 
                 "html",
+                "svelte",
 
                 "cssls",
                 "cssmodules_ls",
