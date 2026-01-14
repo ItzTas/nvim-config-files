@@ -139,6 +139,7 @@ return {
                 "cssls",
                 "cssmodules_ls",
                 "css_variables",
+                "tailwindcss",
 
                 "csharp_ls",
                 "jsonls",
