@@ -36,6 +36,7 @@ return {
                 require("none-ls.code_actions.eslint"),
                 null_ls.builtins.code_actions.gitrebase,
                 null_ls.builtins.code_actions.gitsigns,
+                null_ls.builtins.formatting.rustywind,
             },
             large_file_skip_byte_limit = 0,
         })
