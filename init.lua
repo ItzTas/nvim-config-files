@@ -72,10 +72,9 @@ vim.api.nvim_create_autocmd("ModeChanged", {
     end,
 })
 
-vim.api.nvim_create_autocmd({"BufRead","BufNewFile"}, {
-  pattern = "*.prototools",
-  callback = function()
-    vim.bo.filetype = "toml"
-  end
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+    pattern = "*.prototools",
+    callback = function()
+        vim.bo.filetype = "toml"
+    end,
 })
-

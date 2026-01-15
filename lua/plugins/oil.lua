@@ -67,7 +67,7 @@ return {
             -- Set to `false` to remove a keymap
             -- See :help oil-actions for a list of all available actions
             keymaps = {
-                ["g?"] = { "actions.show_help", mode = "n" },
+                ["<leader>?"] = { "actions.show_help", mode = "n" },
                 ["<C-j>"] = { "actions.select", opts = {} },
                 ["<C-t>"] = { "actions.select", opts = { vertical = true } },
                 ["<C-y>"] = "actions.preview",
