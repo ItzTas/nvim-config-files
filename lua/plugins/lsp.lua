@@ -159,13 +159,35 @@ return {
                     end,
                 },
             })
+
             vim.lsp.config("tsserver", {
                 single_file_support = true,
             })
+
             vim.lsp.config("taplo", {
                 cmd = { "taplo", "lsp", "stdio" },
                 filetypes = { "toml" },
                 root_markers = { ".taplo.toml", "taplo.toml", ".git" },
+            })
+
+            vim.lsp.config("cssls", {
+                settings = {
+                    css = {
+                        lint = {
+                            unknownAtRules = "ignore",
+                        },
+                    },
+                    scss = {
+                        lint = {
+                            unknownAtRules = "ignore",
+                        },
+                    },
+                    less = {
+                        lint = {
+                            unknownAtRules = "ignore",
+                        },
+                    },
+                },
             })
         end,
     },
