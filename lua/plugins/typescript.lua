@@ -34,15 +34,15 @@ return {
                 -- https://github.com/microsoft/TypeScript/blob/3c221fc086be52b19801f6e8d82596d04607ede6/src/compiler/utilitiesPublic.ts#L620
                 tsserver_locale = "en",
                 -- mirror of VSCode's `typescript.suggest.completeFunctionCalls`
-                complete_function_calls = false,
+                complete_function_calls = true,
                 include_completions_with_insert_text = true,
                 -- CodeLens
                 -- WARNING: Experimental feature also in VSCode, because it might hit performance of server.
                 -- possible values: ("off"|"all"|"implementations_only"|"references_only")
-                code_lens = "off",
+                code_lens = "all",
                 -- by default code lenses are displayed on all referencable values and for some of you it can
                 -- be too much this option reduce count of them by removing member references from lenses
-                disable_member_code_lens = true,
+                disable_member_code_lens = false,
                 -- JSXCloseTag
                 -- WARNING: it is disabled by default (maybe you configuration or distro already uses nvim-ts-autotag,
                 -- that maybe have a conflict if enable this feature. )

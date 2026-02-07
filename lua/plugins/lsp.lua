@@ -108,7 +108,6 @@ return {
             vim.lsp.enable({
                 "eslint",
                 "lua_ls",
-                "tsserver",
                 "jdtls",
                 "angularls",
                 "prismals",
