@@ -11,7 +11,7 @@ function M.format_js_ts(bufnr)
     local has_other_formatter = false
 
     for _, client in ipairs(clients) do
-        if client.supports_method("textDocument/formatting") and client.name ~= "ts_ls" then
+        if client:supports_method("textDocument/formatting", bufnr) and client.name ~= "ts_ls" then
             has_other_formatter = true
             break
         end
