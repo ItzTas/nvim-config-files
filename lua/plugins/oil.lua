@@ -3,9 +3,8 @@ return {
     ---@module 'oil'
     ---@type oil.SetupOpts
     opts = {},
-    -- Optional dependencies
+    cond = not vim.g.started_by_firenvim,
     dependencies = { { "echasnovski/mini.icons", opts = {} } },
-    -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
     config = function()
         require("oil").setup({
             -- Oil will take over directory buffers (e.g. `vim .` or `:e src/`)

@@ -51,3 +51,10 @@ vim.api.nvim_create_autocmd("FileType", {
         vim.opt_local.softtabstop = 2
     end,
 })
+
+if vim.g.started_by_firevim then
+    vim.opt.laststatus = 0
+    vim.opt.showtabline = 0
+    vim.opt.laststatus = 0
+    vim.opt.showmode = false
+end
