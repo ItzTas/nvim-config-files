@@ -3,6 +3,7 @@ vim.g.maplocalleader = "ç"
 -- vim.opt.termguicolors = true
 require("lazy.lazy")
 require("functions")
+require("commands")
 require("config")
 
 local _ = {
