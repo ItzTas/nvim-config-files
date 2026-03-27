@@ -14,19 +14,15 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local function gather_plugin_specs()
+local function get_specs()
     local specs = {}
     local root = vim.fn.stdpath("config") .. "/lua/plugins"
 
-    for _, d in ipairs(vim.fn.globpath(root, "*/", true, true)) do
-        local rel = d:gsub(root .. "/", ""):gsub("/$", "")
-        if #vim.fn.glob(d .. "*.lua", false, true) > 0 then
-            table.insert(specs, { import = ("plugins." .. rel) })
-        end
-    end
+    local files = vim.fn.globpath(root, "**/*.lua", true, true)
 
-    if #vim.fn.glob(root .. "/*.lua", false, true) > 0 then
-        table.insert(specs, 1, { import = "plugins" })
+    for _, file in ipairs(files) do
+        local rel = file:gsub(root .. "/", ""):gsub("%.lua$", ""):gsub("/", ".")
+        table.insert(specs, { import = "plugins." .. rel })
     end
 
     return specs
@@ -36,7 +32,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 require("lazy").setup({
-    spec = gather_plugin_specs(),
+    spec = get_specs(),
 
     install = { colorscheme = { "rose-pine", "zenbones" } },
 
