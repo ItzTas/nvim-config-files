@@ -43,7 +43,7 @@ return {
         },
         enabled = false,
         config = function()
-            require("plugins.null-ls")
+            require("plugins.lsp.null-ls")
 
             require("mason-null-ls").setup({
                 automatic_installation = true,
