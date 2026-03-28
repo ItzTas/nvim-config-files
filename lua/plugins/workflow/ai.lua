@@ -6,7 +6,7 @@ return {
         neocodeium.setup({
             -- If `false`, then would not start codeium server (disabled state)
             -- You can manually enable it at runtime with `:NeoCodeium enable`
-            enabled = false,
+            enabled = true,
             -- Path to a custom Codeium server binary (you can download one from:
             -- https://github.com/Exafunction/codeium/releases)
             bin = nil,
@@ -42,13 +42,15 @@ return {
             -- You can still enable disabled by this option buffer with `:NeoCodeium enable_buffer`
             filetypes = {
                 help = false,
-                gitcommit = false,
-                gitrebase = false,
+                gitcommit = true,
+                gitrebase = true,
                 ["."] = false,
             },
             -- List of directories and files to detect workspace root directory for Codeium chat
             root_dir = { ".bzr", ".git", ".hg", ".svn", "_FOSSIL_", "package.json" },
         })
         vim.keymap.set("i", "<C-b>", neocodeium.accept)
+        vim.keymap.set("i", "<C-l>", neocodeium.accept_word)
+        vim.keymap.set("i", "<C-s>", neocodeium.accept_line)
     end,
 }

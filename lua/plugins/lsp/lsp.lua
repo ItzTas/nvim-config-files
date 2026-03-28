@@ -2,14 +2,15 @@ return {
     {
         "VonHeikemen/lsp-zero.nvim",
         dependencies = {
+            "neovim/nvim-lspconfig",
+            "williamboman/mason.nvim",
+            "williamboman/mason-lspconfig.nvim",
+            "L3MON4D3/LuaSnip",
+            "saadparwaiz1/cmp_luasnip",
+            "hrsh7th/nvim-cmp",
+            "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-path",
             "hrsh7th/cmp-buffer",
-            "neovim/nvim-lspconfig",    -- Configuração de LSP
-            "williamboman/mason.nvim",  -- Gerenciador de servidores LSP
-            "williamboman/mason-lspconfig.nvim", -- Integração com lspconfig
-            "hrsh7th/nvim-cmp",         -- Autocompletar
-            "hrsh7th/cmp-nvim-lsp",     -- Autocompletar para LSP
-            "L3MON4D3/LuaSnip",         -- Snippets
         },
         config = function()
             local lsp_zero = require("lsp-zero")
@@ -72,12 +73,16 @@ return {
                         priority = 99,
                     },
                     {
+                        name = "luasnip",
+                        priority = 80,
+                    },
+                    {
                         name = "path",
-                        priority = 5,
+                        priority = 30,
                     },
                     {
                         name = "buffer",
-                        priority = 1,
+                        priority = 10,
                         option = {
                             keyword_length = 2,
                         },
@@ -85,21 +90,46 @@ return {
                 },
                 snippet = {
                     expand = function(args)
-                        vim.snippet.expand(args.body)
+                        require("luasnip").lsp_expand(args.body)
                     end,
                 },
 
-                mapping = cmp.mapping.preset.insert({
+                mapping = {
                     ["<Home>"] = cmp.mapping.confirm({
                         select = true,
                     }),
-                    ["<C-j>"] = cmp.mapping.select_next_item(),
-                    ["<C-k>"] = cmp.mapping.select_prev_item(),
+                    ["<C-n>"] = cmp.mapping.complete(),
                     ["<C-e>"] = cmp.mapping.abort(),
                     ["<C-y>"] = cmp.mapping.confirm({
                         select = true,
                     }),
-                }),
+                    ["<C-u>"] = cmp.mapping.scroll_docs(-4),
+                    ["<C-d>"] = cmp.mapping.scroll_docs(4),
+
+                    ["<C-j>"] = cmp.mapping(function(fallback)
+                        local luasnip = require("luasnip")
+
+                        if cmp.visible() then
+                            cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+                        elseif luasnip.expand_or_jumpable() then
+                            luasnip.expand_or_jump()
+                        else
+                            cmp.complete()
+                        end
+                    end, { "i", "s" }),
+
+                    ["<C-k>"] = cmp.mapping(function(fallback)
+                        local luasnip = require("luasnip")
+
+                        if cmp.visible() then
+                            cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
+                        elseif luasnip.jumpable(-1) then
+                            luasnip.jump(-1)
+                        else
+                            cmp.complete()
+                        end
+                    end, { "i", "s" }),
+                },
             })
 
             local capabilities = vim.lsp.protocol.make_client_capabilities()
