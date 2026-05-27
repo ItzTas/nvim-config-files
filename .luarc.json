@@ -1,8 +1,22 @@
 {
+  "workspace": {
+    "library": [
+      "/usr/share/hypr/stubs",
+      "${env:HOME}/.config/hypr/lua"
+    ]
+  },
   "runtime.version": "LuaJIT",
-  "runtime.path": ["lua/?.lua", "lua/?/init.lua"],
-  "diagnostics.globals": ["vim", "set_transparent_background"],
+  "runtime.path": [
+    "lua/?.lua",
+    "lua/?/init.lua"
+  ],
+  "diagnostics.globals": [
+    "vim"
+  ],
   "workspace.checkThirdParty": false,
-  "workspace.library": ["$VIMRUNTIME", "${3rd}/luv/library"],
+  "workspace.library": [
+    "$VIMRUNTIME",
+    "${3rd}/luv/library"
+  ],
   "completion.autoRequire": false
 }

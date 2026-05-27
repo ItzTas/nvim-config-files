@@ -2,7 +2,6 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "ç"
 -- vim.opt.termguicolors = true
 require("lazy.lazy")
-require("functions")
 require("commands")
 require("config")
 
@@ -64,18 +63,9 @@ local _ = {
 }
 
 vim.cmd("colorscheme rose-pine-moon")
-set_transparent_background()
 
-vim.api.nvim_create_autocmd("ModeChanged", {
-    pattern = "v*",
-    callback = function()
-        vim.api.nvim_set_hl(0, "Visual", { bg = "#5e81ac", fg = "#ffffff" })
-    end,
-})
+local bg = require("functions.set_transparent")
 
-vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-    pattern = "*.prototools",
-    callback = function()
-        vim.bo.filetype = "toml"
-    end,
-})
+bg.set_transparent_background()
+
+require("autocmds")

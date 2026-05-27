@@ -1,4 +1,6 @@
-vim.keymap.set("n", "<leader>f", _G.format_file)
+local fmt = require("functions.format")
+
+vim.keymap.set("n", "<leader>f", fmt.format_file)
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
