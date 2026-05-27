@@ -8,7 +8,6 @@ return {
             timeout = 3000,
             background_colour = "#000000",
             on_open = function(win)
-                -- Força transparência total na janela flutuante da notificação
                 vim.api.nvim_win_set_option(win, "winblend", 100)
             end,
         })
