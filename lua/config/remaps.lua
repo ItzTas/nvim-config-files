@@ -98,29 +98,7 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
-do
-    local function escape_pattern(str)
-        return str:gsub("([%.%-%+%*%?%[%]%^%$%(%)])", "%%%1")
-    end
 
-    vim.g.escaped_word = ""
-
-    vim.keymap.set("n", "<leader>mr", function()
-        local word = vim.fn.input("Grep > ")
-        vim.g.escaped_word = escape_pattern(word)
-        vim.cmd("vimgrep /" .. vim.g.escaped_word .. "/gn ./**")
-        vim.cmd("copen")
-    end)
-end
-
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = "qf",
-    callback = function()
-        vim.keymap.set("n", "<C-j>", ":cnext<CR><C-w>j", { buffer = 0 })
-        vim.keymap.set("n", "<C-k>", ":cprev<CR><C-w>j", { buffer = 0 })
-        vim.keymap.set("n", "<C-r>", ":cdo %s/" .. vim.g.escaped_word .. "//gc<left><left><left>", { buffer = 0 })
-    end,
-})
 
 vim.keymap.set("n", "<leader>ex", ":!chmod +x %<CR>")
 vim.keymap.set("n", "<leader>es", ":!exercism submit %<CR>")
