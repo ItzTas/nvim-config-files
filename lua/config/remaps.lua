@@ -137,26 +137,4 @@ vim.keymap.set("i", "<C-v>", '<ESC>"+pi')
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>S", 'yiW:%s/<C-r>"/<C-r>"/gI<Left><Left><Left>')
 
-vim.keymap.set("n", "V", function()
-    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("V", true, false, true), "n", true)
-    vim.api.nvim_set_hl(0, "Visual", { bg = "#5e81ac", fg = "#ffffff" })
-end)
 
-vim.keymap.set("n", "v", function()
-    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("v", true, false, true), "n", true)
-    vim.api.nvim_set_hl(0, "Visual", { bg = "#5e81ac", fg = "#ffffff" })
-end)
-
-vim.keymap.set("v", "<C-p>", function()
-    vim.api.nvim_set_hl(0, "Visual", { bg = "#5e81ac", fg = "#ffffff" })
-end)
-
-vim.keymap.set("n", "<C-v>", function()
-    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<C-v>", true, false, true), "n", true)
-    vim.api.nvim_set_hl(0, "Visual", { bg = "#5e81ac", fg = "#ffffff" })
-end)
-
-vim.keymap.set("n", "<C-q>", function()
-    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<C-v>", true, false, true), "n", true)
-    vim.api.nvim_set_hl(0, "Visual", { bg = "#5e81ac", fg = "#ffffff" })
-end)

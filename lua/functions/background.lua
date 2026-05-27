@@ -26,6 +26,4 @@ function M.set_transparent_background()
     end
 end
 
-_G.set_transparent_background = M.set_transparent_background
-
 return M

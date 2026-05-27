@@ -1,7 +1,13 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "ç"
--- vim.opt.termguicolors = true
-require("lazy.lazy")
+
+-- Shim: plugins still using the deprecated vim.tbl_flatten
+---@diagnostic disable-next-line: duplicate-set-field
+vim.tbl_flatten = function(t)
+    return vim.iter(t):flatten():totable()
+end
+
+require("manager")
 require("commands")
 require("config")
 
@@ -64,7 +70,7 @@ local _ = {
 
 vim.cmd("colorscheme rose-pine-moon")
 
-local bg = require("functions.set_transparent")
+local bg = require("functions.background")
 
 bg.set_transparent_background()
 

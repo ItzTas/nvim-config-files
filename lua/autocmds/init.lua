@@ -1,9 +1,36 @@
-vim.api.nvim_create_autocmd("ModeChanged", {
-    pattern = "v*",
-    callback = function()
-        vim.api.nvim_set_hl(0, "Visual", { bg = "#5e81ac", fg = "#ffffff" })
-    end,
-})
+do
+    local saved_visual_hl = {}
+
+    local function save_visual_hl()
+        local hl = vim.api.nvim_get_hl(0, { name = "Visual", link = false })
+        if hl and next(hl) then
+            saved_visual_hl = hl
+        end
+    end
+
+    local function apply_visual_hl()
+        if next(saved_visual_hl) then
+            vim.api.nvim_set_hl(0, "Visual", saved_visual_hl)
+        end
+    end
+
+    save_visual_hl()
+
+    vim.api.nvim_create_autocmd("ColorScheme", {
+        callback = function()
+            vim.schedule(save_visual_hl)
+        end,
+    })
+
+    vim.api.nvim_create_autocmd("ModeChanged", {
+        pattern = "*:[vV\x16]",
+        callback = apply_visual_hl,
+    })
+
+    vim.api.nvim_create_autocmd("FocusGained", {
+        callback = apply_visual_hl,
+    })
+end
 
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     pattern = "*.prototools",

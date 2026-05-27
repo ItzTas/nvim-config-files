@@ -31,6 +31,4 @@ function M.format_js_ts(bufnr)
     })
 end
 
-_G.format_file = M.format_file
-
 return M
