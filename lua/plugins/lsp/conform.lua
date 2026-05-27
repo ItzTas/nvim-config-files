@@ -22,10 +22,5 @@ return {
             zsh = { "shfmt", "shellharden" },
             cs = { "csharpier" },
         },
-        -- Descomente abaixo se desejar formatar automaticamente ao salvar
-        -- format_on_save = {
-        --     timeout_ms = 500,
-        --     lsp_fallback = true,
-        -- },
     },
 }
