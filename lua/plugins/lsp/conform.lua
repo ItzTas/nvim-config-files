@@ -1,0 +1,31 @@
+return {
+    "stevearc/conform.nvim",
+    event = { "BufWritePre" },
+    cmd = { "ConformInfo" },
+    opts = {
+        formatters_by_ft = {
+            lua = { "stylua" },
+            go = { "goimports_reviser", "goimports", "gofumpt" },
+            python = { "black" },
+            javascript = { "prettierd" },
+            typescript = { "prettierd" },
+            javascriptreact = { "prettierd", "rustywind" },
+            typescriptreact = { "prettierd", "rustywind" },
+            css = { "prettierd" },
+            html = { "prettierd", "rustywind" },
+            json = { "prettierd" },
+            jsonc = { "prettierd" },
+            markdown = { "prettierd" },
+            yaml = { "yamlfmt" },
+            sh = { "shfmt", "shellharden" },
+            bash = { "shfmt", "shellharden" },
+            zsh = { "shfmt", "shellharden" },
+            cs = { "csharpier" },
+        },
+        -- Descomente abaixo se desejar formatar automaticamente ao salvar
+        -- format_on_save = {
+        --     timeout_ms = 500,
+        --     lsp_fallback = true,
+        -- },
+    },
+}

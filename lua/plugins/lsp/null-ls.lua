@@ -18,25 +18,10 @@ return {
                 null_ls.builtins.diagnostics.zsh,
                 null_ls.builtins.diagnostics.hadolint,
 
-                null_ls.builtins.formatting.stylua,
-                null_ls.builtins.formatting.goimports,
-                null_ls.builtins.formatting.gofumpt,
-                null_ls.builtins.formatting.goimports_reviser,
-                null_ls.builtins.formatting.prettierd.with({
-                    disabled_filetypes = { "yaml" },
-                }),
-                null_ls.builtins.formatting.shfmt,
-                null_ls.builtins.formatting.yamlfmt,
-                null_ls.builtins.formatting.black,
-                null_ls.builtins.formatting.csharpier,
-                null_ls.builtins.diagnostics.zsh,
-                null_ls.builtins.formatting.shellharden,
-
                 null_ls.builtins.code_actions.gomodifytags,
                 require("none-ls.code_actions.eslint"),
                 null_ls.builtins.code_actions.gitrebase,
                 null_ls.builtins.code_actions.gitsigns,
-                null_ls.builtins.formatting.rustywind,
             },
             large_file_skip_byte_limit = 0,
         })
