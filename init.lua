@@ -75,3 +75,4 @@ local bg = require("functions.background")
 bg.set_transparent_background()
 
 require("autocmds")
+
