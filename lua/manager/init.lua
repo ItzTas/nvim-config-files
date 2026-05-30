@@ -28,9 +28,6 @@ local function get_specs()
     return specs
 end
 
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
-
 require("lazy").setup({
     spec = get_specs(),
 

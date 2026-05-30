@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.g.maplocalleader = "ç"
+vim.g.maplocalleader = "\\"
 
 -- Shim: plugins still using the deprecated vim.tbl_flatten
 ---@diagnostic disable-next-line: duplicate-set-field
