@@ -168,6 +168,7 @@ return {
 
 				"html",
 				"svelte",
+                "vue_ls",
 
 				"cssls",
 				"cssmodules_ls",
