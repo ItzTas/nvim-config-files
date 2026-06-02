@@ -142,7 +142,6 @@ return {
 				"eslint",
 				"lua_ls",
 				"jdtls",
-				"angularls",
 				"prismals",
 				"hyprls",
 				"gopls",
