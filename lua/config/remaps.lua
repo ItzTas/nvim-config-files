@@ -64,6 +64,8 @@ vim.keymap.set("n", "<leader>|", "<C-w>v")
 vim.keymap.set("n", "<leader><", "<C-w><")
 vim.keymap.set("n", "<leader>>", "<C-w>>")
 
+vim.keymap.set("t", "<C-w>", [[<C-\><C-n><C-w>]])
+
 vim.keymap.set({ "n", "v", "x", "o", "i" }, "<C-c>", "<Esc>")
 vim.keymap.set("i", "ĉ", "<Esc>")
 
