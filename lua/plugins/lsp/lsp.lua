@@ -221,6 +221,20 @@ return {
 					},
 				},
 			})
+
+			vim.lsp.config("svelte", {
+				-- Yarn PnP: o svelteserver do Mason roda fora do runtime do PnP e
+				-- falha ao carregar svelte.config.js (ERR_MODULE_NOT_FOUND). Se o
+				-- projeto tiver SDKs do Yarn (.yarn/sdks), usa o wrapper que ativa
+				-- o PnP; caso contrario, cai no binario do Mason.
+				cmd = function(dispatchers, config)
+					local root = (config and config.root_dir) or vim.uv.cwd()
+					local sdk = root .. "/.yarn/sdks/svelte-language-server/bin/server.js"
+					local cmd = vim.uv.fs_stat(sdk) and { "node", sdk, "--stdio" }
+						or { "svelteserver", "--stdio" }
+					return vim.lsp.rpc.start(cmd, dispatchers)
+				end,
+			})
 		end,
 	},
 }
