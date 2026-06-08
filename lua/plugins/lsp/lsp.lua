@@ -1,19 +1,15 @@
 return {
 	{
-		"VonHeikemen/lsp-zero.nvim",
+		"hrsh7th/nvim-cmp",
 		dependencies = {
-			"williamboman/mason.nvim",
-			"williamboman/mason-lspconfig.nvim",
 			"L3MON4D3/LuaSnip",
 			"saadparwaiz1/cmp_luasnip",
 			"rafamadriz/friendly-snippets",
-			"hrsh7th/nvim-cmp",
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-buffer",
 		},
 		config = function()
-			local lsp_zero = require("lsp-zero")
 			local lsp_attach = function(client, bufnr)
 				local opts = { buffer = bufnr, remap = false, desc = "LSP" }
 
@@ -58,9 +54,14 @@ return {
 				end, opts)
 			end
 
-			lsp_zero.extend_lspconfig({
-				sign_text = true,
-				lsp_attach = lsp_attach,
+			vim.api.nvim_create_autocmd("LspAttach", {
+				callback = function(event)
+					local client = vim.lsp.get_client_by_id(event.data.client_id)
+					lsp_attach(client, event.buf)
+				end,
+			})
+
+			vim.lsp.config("*", {
 				capabilities = require("cmp_nvim_lsp").default_capabilities(),
 			})
 
@@ -133,9 +134,6 @@ return {
 					end, { "i", "s" }),
 				},
 			})
-
-			local capabilities = vim.lsp.protocol.make_client_capabilities()
-			capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 			vim.lsp.enable({
 				"eslint",
