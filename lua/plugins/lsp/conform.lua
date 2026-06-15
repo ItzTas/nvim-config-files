@@ -17,6 +17,7 @@ return {
             jsonc = { "prettierd" },
             markdown = { "prettierd" },
             yaml = { "yamlfmt" },
+            rust = { "rustfmt" },
             sh = { "shfmt", "shellharden" },
             bash = { "shfmt", "shellharden" },
             zsh = { "shfmt", "shellharden" },
