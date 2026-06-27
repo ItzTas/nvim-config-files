@@ -2,6 +2,7 @@ return {
 	{
 		"hrsh7th/nvim-cmp",
 		dependencies = {
+			"neovim/nvim-lspconfig",
 			"L3MON4D3/LuaSnip",
 			"saadparwaiz1/cmp_luasnip",
 			"rafamadriz/friendly-snippets",
@@ -164,7 +165,7 @@ return {
 
 				"html",
 				"svelte",
-				"ts_ls",
+				"vtsls",
 				"vue_ls",
 
 				"cssls",
@@ -190,8 +191,38 @@ return {
 				},
 			})
 
-			vim.lsp.config("tsserver", {
-				single_file_support = true,
+			local vue_language_server_path = vim.fn.stdpath("data")
+				.. "/mason/packages/vue-language-server/node_modules/@vue/language-server"
+
+			vim.lsp.config("vtsls", {
+				filetypes = {
+					"javascript",
+					"javascriptreact",
+					"javascript.jsx",
+					"typescript",
+					"typescriptreact",
+					"typescript.tsx",
+					"vue",
+				},
+				settings = {
+					typescript = {
+						tsdk = ".yarn/sdks/typescript/lib",
+					},
+					vtsls = {
+						autoUseWorkspaceTsdk = true,
+						tsserver = {
+							globalPlugins = {
+								{
+									name = "@vue/typescript-plugin",
+									location = vue_language_server_path,
+									languages = { "vue" },
+									configNamespace = "typescript",
+									enableForWorkspaceTypeScriptVersions = true,
+								},
+							},
+						},
+					},
+				},
 			})
 
 			vim.lsp.config("taplo", {
@@ -221,6 +252,21 @@ return {
 			})
 
 			vim.lsp.config("svelte", {
+				root_dir = function(bufnr, on_dir)
+					local fname = vim.api.nvim_buf_get_name(bufnr)
+					if vim.uv.fs_stat(fname) == nil then
+						return
+					end
+					local root = vim.fs.root(bufnr, {
+						"svelte.config.js",
+						"svelte.config.ts",
+						"svelte.config.mjs",
+						"svelte.config.cjs",
+					})
+					if root then
+						on_dir(root)
+					end
+				end,
 				cmd = function(dispatchers, config)
 					local root = (config and config.root_dir) or vim.uv.cwd()
 					local sdk = root .. "/.yarn/sdks/svelte-language-server/bin/server.js"

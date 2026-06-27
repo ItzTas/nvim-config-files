@@ -1,11 +1,9 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
--- Shim: plugins still using the deprecated vim.tbl_flatten
----@diagnostic disable-next-line: duplicate-set-field
-vim.tbl_flatten = function(t)
-	return vim.iter(t):flatten():totable()
-end
+-- Install deprecation shims before any plugin spec evaluates (manager bootstraps
+-- lazy.nvim). config/init.lua re-requires this later, but require() caches it.
+require("config.deprecations")
 
 require("manager")
 require("commands")

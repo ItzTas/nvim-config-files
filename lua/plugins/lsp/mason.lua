@@ -30,6 +30,7 @@ return {
                     -- "dockerls",
                 },
                 automatic_installation = true,
+                automatic_enable = false,
             })
         end,
     },

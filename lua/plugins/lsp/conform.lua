@@ -20,7 +20,9 @@ return {
             rust = { "rustfmt" },
             sh = { "shfmt", "shellharden" },
             bash = { "shfmt", "shellharden" },
-            zsh = { "shfmt", "shellharden" },
+            -- shfmt/shellharden só entendem bash/POSIX e quebram sintaxe zsh
+            -- (ex.: $BUFFER[CURSOR+1] -> $BUFFER[CURSOR + 1]). Sem formatter pra zsh.
+            zsh = {},
             cs = { "csharpier" },
         },
     },
