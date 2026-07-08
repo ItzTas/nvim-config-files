@@ -16,7 +16,9 @@ return {
                 null_ls.builtins.diagnostics.markdownlint,
                 -- null_ls.builtins.diagnostics.ltrs,
                 null_ls.builtins.diagnostics.zsh,
-                null_ls.builtins.diagnostics.hadolint,
+                null_ls.builtins.diagnostics.trivy.with({
+                    filetypes = { "dockerfile" },
+                }),
 
                 null_ls.builtins.code_actions.gomodifytags,
                 require("none-ls.code_actions.eslint"),
