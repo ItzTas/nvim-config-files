@@ -225,6 +225,19 @@ return {
 				},
 			})
 
+			-- pylsp é auto-habilitado pelo mason-lspconfig (automatic_installation);
+			-- o ruff já faz o lint, então só alinhamos o pycodestyle ao limite do
+			-- ruff (88) para não duplicar E501 no default 79.
+			vim.lsp.config("pylsp", {
+				settings = {
+					pylsp = {
+						plugins = {
+							pycodestyle = { maxLineLength = 88 },
+						},
+					},
+				},
+			})
+
 			vim.lsp.config("taplo", {
 				cmd = { "taplo", "lsp", "stdio" },
 				filetypes = { "toml" },
