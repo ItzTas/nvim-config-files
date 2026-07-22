@@ -18,6 +18,7 @@ return {
             markdown = { "prettierd" },
             yaml = { "yamlfmt" },
             rust = { "rustfmt" },
+            kotlin = { "ktfmt" },
             sh = { "shfmt", "shellharden" },
             bash = { "shfmt", "shellharden" },
             -- shfmt/shellharden só entendem bash/POSIX e quebram sintaxe zsh
